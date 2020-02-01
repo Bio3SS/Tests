@@ -79,53 +79,6 @@ midterm1.orders:
 
 ######################################################################
 
-## Short answers
-
-# Make combined SA lists for each test
-Ignore += *.short.test
-Sources += sahead.short
-midterm1.short.test: sahead.short evaluation/linear.short evaluation/nonlinear.short 
-	$(cat)
-
-midterm2.short.test: evaluation/linear.short evaluation/nonlinear.short evaluation/structure.short evaluation/life_history.short
-	$(cat)
-
-# Select the short-answer part of a test
-
-.PRECIOUS: %.sa
-Ignore += *.sa
-%.sa: %.short.test null.tmp %.select.fmt $(ms)/newtalk/lect.pl
-	$(PUSH)
-
-######################################################################
-
-## SA processing
-## Not scrambling (afraid of format problems)
-	## Maybe these can be solved by always having a page per question
-## Not sure where the scramble markers are going!
-
-Ignore += *.vsa
-midterm1.%.vsa: midterm1.sa testselect.pl
-	$(PUSHSTAR)
-
-midterm2.%.vsa: midterm2.sa testselect.pl
-	$(PUSHSTAR)
-
-midterm2.vsa: midterm2.sa
-	$(cat)
-
-## Convert versioned sa to rmd style
-Ignore += *.rsa
-%.rsa: %.vsa lect/knit.fmt $(ms)/newtalk/lect.pl
-	$(PUSH)
-
-Ignore += *.ksa
-## and finally knit
-knit = echo 'knitr::knit("$<", "$@")' | R --vanilla
-%.ksa: %.rsa
-	$(knit)
-
-######################################################################
 
 
 ## Put the test together
@@ -293,8 +246,3 @@ defer: Bio_3SS3_C01_V5.pdf
 
 Bio_3SS3_C01_V%.pdf: final.%.final.pdf
 	$(forcelink)
-
-######################################################################
-
-Ignore += $(resting)
-

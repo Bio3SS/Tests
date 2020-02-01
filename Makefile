@@ -33,7 +33,7 @@ pardirs += evaluation
 ## DON'T try to make this work with -e (not easy, not important)
 Sources += archive.pl
 archiveQuestions:
-	perl -pi -f archive.pl evaluation/*.bank
+	perl -pi -f archive.pl evaluation/*.bank evaluation/*.short
 
 ######################################################################
 
@@ -86,20 +86,68 @@ Ignore += *.mc
 
 # Scramble
 
+# midterm1.1.smc:
+
 Sources += $(wildcard *.pl)
 
-midterm1.%.mc: midterm1.mc scramble.pl
+midterm1.%.smc: midterm1.mc scramble.pl
 	$(PUSHSTAR)
 
-midterm2.%.mc: midterm2.mc scramble.pl
+midterm2.%.smc: midterm2.mc scramble.pl
 	$(PUSHSTAR)
 
-final.%.test: final.mc scramble.pl
+final.%.test: final.smc scramble.pl
 	$(PUSHSTAR)
 
 final.test: final.mc
 	$(copy)
- 
+
+######################################################################
+
+## Select short answers
+
+midterm1.sa:
+
+# Make combined SA lists for each test
+Ignore += *.short.test
+Sources += sahead.short
+midterm1.short.test: sahead.short evaluation/linear.short evaluation/nonlinear.short 
+	$(cat)
+
+midterm2.short.test: evaluation/linear.short evaluation/nonlinear.short evaluation/structure.short evaluation/life_history.short
+	$(cat)
+
+# Select the short-answer part of a test
+
+.PRECIOUS: %.sa
+Ignore += *.sa
+%.sa: %.short.test null.tmp %.select.fmt newtalk/lect.pl
+	$(PUSH)
+
+######################################################################
+
+## Knit short answers
+## Not scrambling (afraid of format problems)
+## Maybe these can be solved by always having a page per question
+
+Ignore += *.vsa
+midterm1.%.vsa: midterm1.sa testselect.pl
+	$(PUSHSTAR)
+
+midterm2.%.vsa: midterm2.sa testselect.pl
+	$(PUSHSTAR)
+
+## Convert versioned sa to rmd style
+Ignore += *.rsa
+%.rsa: %.vsa lect/knit.fmt newtalk/lect.pl
+	$(PUSH)
+
+Ignore += *.ksa
+## and finally knit
+knit = echo 'knitr::knit("$<", "$@")' | R --vanilla
+%.ksa: %.rsa
+	$(knit)
+
 ######################################################################
 
 ### Makestuff
@@ -141,5 +189,4 @@ subTests:
 	$(CP) subTests/$@ .
 	$(RW)
 
-######################################################################
-
+## cp subTests/sahead.short . ##

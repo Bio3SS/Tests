@@ -31,7 +31,6 @@ pardirs += evaluation
 ## Start the year by tagging last year's questions.
 ## DON'T do this until you update the year
 ## DON'T try to make this work with -e (not easy, not important)
-Sources += archive.pl
 archiveQuestions:
 	perl -pi -f archive.pl evaluation/*.bank evaluation/*.short
 
@@ -142,11 +141,56 @@ Ignore += *.rsa
 %.rsa: %.vsa lect/knit.fmt newtalk/lect.pl
 	$(PUSH)
 
-Ignore += *.ksa
 ## and finally knit
+Ignore += *.ksa
 knit = echo 'knitr::knit("$<", "$@")' | R --vanilla
 %.ksa: %.rsa
 	$(knit)
+
+######################################################################
+
+## Put the test together
+
+#  midterm1.1.test:
+
+### Separator for MC and SA on the same test
+Sources += end.dmu
+
+Ignore += *.test
+%.test: %.smc end.dmu %.ksa
+	$(cat)
+midterm1.1.test: midterm1.1.smc end.dmu midterm1.1.ksa
+	$(cat)
+
+## Instructions added for 1M strictness; not sure whether to copy them over
+Sources += sa_inst.tex
+
+## This should be done better
+Sources += copy.tex
+
+######################################################################
+
+## Latex outputs
+
+## midterm2.test.pdf: evaluation/structure.bank
+## midterm1.2.test: evaluation/nonlinear.bank
+## midterm1.2.test.pdf: evaluation/nonlinear.bank
+## midterm2.3.key.pdf: evaluation/life_history.bank
+## midterm2.4.rub.pdf: evaluation/structure.short
+
+Sources += test.tmp
+Ignore += *.test.tex *.test.pdf
+%.test.tex: %.test test.tmp test.test.fmt newtalk/lect.pl
+	$(PUSH)
+
+Ignore += *.key.*
+%.key.tex: %.test test.tmp key.test.fmt newtalk/lect.pl
+	$(PUSH)
+
+## Why are rubric dependencies different??
+Ignore += *.rub.*
+%.rub.tex: %.ksa test.tmp rub.test.fmt newtalk/lect.pl
+	$(PUSH)
 
 ######################################################################
 
@@ -185,8 +229,7 @@ Ignore += subTests
 subTests:
 	git clone https://github.com/Bio3SS/$@.git
 
-%.pl:
+$(Sources):
 	$(CP) subTests/$@ .
 	$(RW)
 
-## cp subTests/sahead.short . ##

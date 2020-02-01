@@ -79,35 +79,12 @@ midterm1.orders:
 
 ######################################################################
 
-
-
-## Put the test together
-
-### Separator for MC and SA on the same test
-Sources += end.dmu
-
-Ignore += *.test
-%.test: %.mc end.dmu %.ksa
-	$(cat)
-
-## Instructions added for 1M strictness; not sure whether to copy them over
-Sources += sa_inst.tex
-
-## This should be done better
-Sources += copy.tex
-
-######################################################################
-
-.SECONDEXPANSION:
-evaluation.now: %.now: $$(wildcard $$*/*)
-	@echo $^
+## Latex outputs
 
 midterm2.test.pdf: evaluation/structure.bank
 midterm2.5.test.pdf: evaluation/life_history.bank
 midterm2.3.key.pdf: evaluation/life_history.bank
 midterm2.4.rub.pdf: evaluation/structure.short
-
-## Latex outputs
 
 Sources += test.tmp
 Ignore += *.test.tex *.test.pdf

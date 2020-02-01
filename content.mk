@@ -24,57 +24,6 @@ assign/%: ; $(MAKE) assign; $(makethere)
 ##################################################################
 
 
-Ignore += midterm1.bank
-midterm1.bank: midterm1.formulas evaluation/linear.bank evaluation/nonlinear.bank evaluation/structure.bank
-	$(cat)
-
-Ignore += midterm2.bank
-midterm2.bank: midterm2.formulas evaluation/linear.bank evaluation/nonlinear.bank evaluation/structure.bank evaluation/life_history.bank evaluation/comp.bank
-	$(cat)
-
-Ignore += final.bank
-final.bank: final.formulas evaluation/linear.bank evaluation/nonlinear.bank evaluation/structure.bank evaluation/life_history.bank evaluation/comp.bank evaluation/pred.bank evaluation/disease.bank
-	$(cat)
-
-final.5.test.pdf: final.formulas
-final.1.key.pdf: final.formulas
-final.test.pdf: final.formulas
-final.key.pdf: final.formulas
-final.5.final.pdf: final.formulas
-
-## %.bank.test: %.bank null.tmp bank.select.fmt $(ms)/talk/lect.pl
-##	$(PUSH)
-
-######################################################################
-
-midterm2.mc:
-
-# MC selection
-# Use lect/select.format
-
-.PRECIOUS: %.mc
-Ignore += *.mc
-%.mc: %.bank null.tmp %.select.fmt $(ms)/newtalk/lect.pl
-	$(PUSH)
-
-# Scramble
-
-Sources += $(wildcard *.pl)
-
-midterm1.%.mc: midterm1.mc scramble.pl
-	$(PUSHSTAR)
-
-midterm2.%.mc: midterm2.mc scramble.pl
-	$(PUSHSTAR)
-
-final.%.test: final.mc scramble.pl
-	$(PUSHSTAR)
-
-final.test: final.mc
-	$(copy)
- 
-######################################################################
-
 # Test key
 .PRECIOUS: %.ssv
 
@@ -349,7 +298,3 @@ Bio_3SS3_C01_V%.pdf: final.%.final.pdf
 
 Ignore += $(resting)
 
--include $(ms)/texdeps.mk
--include $(ms)/git.mk
--include $(ms)/visual.mk
--include $(ms)/wrapR.mk

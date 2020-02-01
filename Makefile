@@ -4,7 +4,8 @@
 current: target
 -include target.mk
 
-# include makestuff/perl.def
+include makestuff/newtalk.def
+include makestuff/perl.def
 
 ######################################################################
 
@@ -12,18 +13,6 @@ current: target
 
 vim_session:
 	bash -cl "vmt content.mk"
-
-######################################################################
-
-## Cribbing 
-
-## subTests.ro:
-subTests:
-	git clone https://github.com/Bio3SS/$@.git
-
-%.pl:
-	$(CP) subTests/$@ .
-	$(RW)
 
 ######################################################################
 
@@ -36,6 +25,8 @@ subTests:
 pardirs += evaluation
 
 ######################################################################
+
+# Archive
 
 ## Start the year by tagging last year's questions.
 ## DON'T do this until you update the year
@@ -67,12 +58,55 @@ Ignore += *.fmt
 
 ######################################################################
 
+## Short-answer banks
+
+Ignore += midterm1.bank
+midterm1.bank: midterm1.formulas evaluation/linear.bank evaluation/nonlinear.bank evaluation/structure.bank
+	$(cat)
+
+Ignore += midterm2.bank
+midterm2.bank: midterm2.formulas evaluation/linear.bank evaluation/nonlinear.bank evaluation/structure.bank evaluation/life_history.bank evaluation/comp.bank
+	$(cat)
+
+Ignore += final.bank
+final.bank: final.formulas evaluation/linear.bank evaluation/nonlinear.bank evaluation/structure.bank evaluation/life_history.bank evaluation/comp.bank evaluation/pred.bank evaluation/disease.bank
+	$(cat)
+
+######################################################################
+
+# MC selection
+# Use lect/select.format
+
+# midterm1.mc:
+
+.PRECIOUS: %.mc
+Ignore += *.mc
+%.mc: %.bank null.tmp %.select.fmt newtalk/lect.pl
+	$(PUSH)
+
+# Scramble
+
+Sources += $(wildcard *.pl)
+
+midterm1.%.mc: midterm1.mc scramble.pl
+	$(PUSHSTAR)
+
+midterm2.%.mc: midterm2.mc scramble.pl
+	$(PUSHSTAR)
+
+final.%.test: final.mc scramble.pl
+	$(PUSHSTAR)
+
+final.test: final.mc
+	$(copy)
+ 
+######################################################################
+
 ### Makestuff
 
 Sources += Makefile
 
 Sources += content.mk
-## include content.mk
 
 Ignore += makestuff
 msrepo = https://github.com/dushoff
@@ -83,12 +117,29 @@ makestuff/Makefile:
 
 -include makestuff/os.mk
 
--include makestuff/newtalk.mk
+-include makestuff/lect.mk
 -include makestuff/texdeps.mk
 -include makestuff/hotcold.mk
+-include makestuff/wrapR.mk
 
 ## -include makestuff/wrapR.mk
 
 -include makestuff/git.mk
 -include makestuff/visual.mk
 -include makestuff/projdir.mk
+
+######################################################################
+
+## Cribbing 
+
+Ignore += subTests
+## subTests.ro:
+subTests:
+	git clone https://github.com/Bio3SS/$@.git
+
+%.pl:
+	$(CP) subTests/$@ .
+	$(RW)
+
+######################################################################
+

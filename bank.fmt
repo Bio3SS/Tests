@@ -1,6 +1,6 @@
 !SLIDESEP -{40,}
 !PERC %
 !ESL ----------------------------------------
-EXTRA %!
+EXTRA NULLSLIDE
 INTRO INTRO %%
-DEFHEAD %%
+DEFHEAD COMMENT %%

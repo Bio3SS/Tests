@@ -18,10 +18,6 @@ vim_session:
 
 ## Directories
 
-## evaluation would be a good candidate for a submodule, since we could 
-## really set the clock back to when we made the test
-## but I'm NOT doing it now 2020 Feb 01 (Sat)
-
 pardirs += evaluation assign ts
 
 hotdirs += $(pardirs)
@@ -30,8 +26,8 @@ hotdirs += $(pardirs)
 
 # Archive
 
+## DON'T do this until you update the year in archive.pl
 ## Start the year by tagging last year's questions.
-## DON'T do this until you update the year
 ## DON'T try to make this work with -e (not easy, not important)
 archiveQuestions:
 	perl -pi -f archive.pl evaluation/*.bank evaluation/*.short
@@ -62,7 +58,7 @@ Ignore += *.fmt
 ## Short-answer banks
 
 Ignore += midterm1.bank
-midterm1.bank: midterm1.formulas evaluation/linear.bank evaluation/nonlinear.bank evaluation/structure.bank
+midterm1.bank: midterm1.formulas evaluation/linear.bank evaluation/nonlinear.bank
 	$(cat)
 
 Ignore += midterm2.bank
@@ -85,21 +81,22 @@ Ignore += *.mc
 %.mc: %.bank null.tmp %.select.fmt newtalk/lect.pl
 	$(PUSH)
 
-Sources += bank.fmt
-midterm1.bmc:
-%.bmc: %.bank null.tmp bank.fmt newtalk/lect.pl
-	$(PUSH)
-
 # Scramble
+
+## Bank should not be scrambled, make these directly
+
+Sources += bank.fmt
 
 # midterm1.1.smc:
 
 Sources += $(wildcard *.pl)
 
 Ignore += *.smc
+midterm1.bank.smc midterm2.bank.smc: %.smc: % null.tmp bank.fmt newtalk/lect.pl
+	$(PUSH)
+
 midterm1.%.smc: midterm1.mc scramble.pl
 	$(PUSHSTAR)
-
 midterm2.%.smc: midterm2.mc scramble.pl
 	$(PUSHSTAR)
 
@@ -130,8 +127,6 @@ midterm2.short.test: evaluation/linear.short evaluation/nonlinear.short evaluati
 Ignore += *.sa
 %.sa: %.short.test null.tmp %.select.fmt newtalk/lect.pl
 	$(PUSH)
-
-midterm1.bsa:
 %.bank.sa: %.short.test null.tmp bank.fmt newtalk/lect.pl
 	$(PUSH)
 
@@ -142,6 +137,11 @@ midterm1.bsa:
 ## Maybe these can be solved by always having a page per question
 
 Ignore += *.vsa
+
+# Use version 3 for the bank
+midterm1.bank.vsa midterm2.bank.vsa: %.vsa: %.sa testselect.pl
+	perl -wf $(filter %.pl, $^) 3 $(filter-out %.pl, $^) > $@
+
 midterm1.%.vsa: midterm1.sa testselect.pl
 	$(PUSHSTAR)
 
@@ -165,15 +165,13 @@ knit = echo 'knitr::knit("$<", "$@")' | R --vanilla
 
 #  midterm1.1.test:
 #  midterm1.bank.test:
+#  midterm1.bank.key.pdf:
 
 ### Separator for MC and SA on the same test
 Sources += end.dmu
 
 Ignore += *.test
 %.test: %.smc end.dmu %.ksa
-	$(cat)
-
-%.bank.test: %.bmc end.dmu %.bsa
 	$(cat)
 
 midterm1.1.test: midterm1.1.smc end.dmu midterm1.1.ksa
@@ -200,9 +198,6 @@ Sources += copy.tex
 Sources += test.tmp
 Ignore += *.test.tex *.test.pdf
 %.test.tex: %.test test.tmp test.test.fmt newtalk/lect.pl
-	$(PUSH)
-
-%.bank.tex: %.bank test.tmp test.test.fmt newtalk/lect.pl
 	$(PUSH)
 
 Ignore += *.key.*

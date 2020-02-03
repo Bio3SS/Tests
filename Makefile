@@ -22,7 +22,9 @@ vim_session:
 ## really set the clock back to when we made the test
 ## but I'm NOT doing it now 2020 Feb 01 (Sat)
 
-pardirs += evaluation
+pardirs += evaluation assign ts
+
+hotdirs += $(pardirs)
 
 ######################################################################
 
@@ -162,7 +164,8 @@ Ignore += *.test
 midterm1.1.test: midterm1.1.smc end.dmu midterm1.1.ksa
 	$(cat)
 
-## Instructions added for 1M strictness; not sure whether to copy them over
+## Instructions added for 1M strictness; I think I like them
+## Ask team?
 Sources += sa_inst.tex
 
 ## This should be done better
@@ -232,4 +235,8 @@ subTests:
 $(Sources):
 	$(CP) subTests/$@ .
 	$(RW)
+
+## This is pretty.
+subTests/%:
+	$(MAKE) subTests
 

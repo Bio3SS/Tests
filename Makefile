@@ -91,6 +91,7 @@ Ignore += *.mc
 
 Sources += $(wildcard *.pl)
 
+Ignore += *.smc
 midterm1.%.smc: midterm1.mc scramble.pl
 	$(PUSHSTAR)
 
@@ -166,7 +167,7 @@ midterm1.1.test: midterm1.1.smc end.dmu midterm1.1.ksa
 
 ## Instructions added for 1M strictness; I think I like them
 ## Ask team?
-Sources += sa_inst.tex
+Sources += sa_inst.tex sa_head.tex
 
 ## This should be done better
 Sources += copy.tex

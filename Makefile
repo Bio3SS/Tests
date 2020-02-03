@@ -4,8 +4,8 @@
 current: target
 -include target.mk
 
-include makestuff/newtalk.def
-include makestuff/perl.def
+-include makestuff/newtalk.def
+-include makestuff/perl.def
 
 ######################################################################
 
@@ -85,6 +85,11 @@ Ignore += *.mc
 %.mc: %.bank null.tmp %.select.fmt newtalk/lect.pl
 	$(PUSH)
 
+Sources += bank.fmt
+midterm1.bmc:
+%.bmc: %.bank null.tmp bank.fmt newtalk/lect.pl
+	$(PUSH)
+
 # Scramble
 
 # midterm1.1.smc:
@@ -126,6 +131,10 @@ Ignore += *.sa
 %.sa: %.short.test null.tmp %.select.fmt newtalk/lect.pl
 	$(PUSH)
 
+midterm1.bsa:
+%.bank.sa: %.short.test null.tmp bank.fmt newtalk/lect.pl
+	$(PUSH)
+
 ######################################################################
 
 ## Knit short answers
@@ -155,6 +164,7 @@ knit = echo 'knitr::knit("$<", "$@")' | R --vanilla
 ## Put the test together
 
 #  midterm1.1.test:
+#  midterm1.bank.test:
 
 ### Separator for MC and SA on the same test
 Sources += end.dmu
@@ -162,6 +172,10 @@ Sources += end.dmu
 Ignore += *.test
 %.test: %.smc end.dmu %.ksa
 	$(cat)
+
+%.bank.test: %.bmc end.dmu %.bsa
+	$(cat)
+
 midterm1.1.test: midterm1.1.smc end.dmu midterm1.1.ksa
 	$(cat)
 
@@ -176,6 +190,7 @@ Sources += copy.tex
 
 ## Latex outputs
 
+## midterm1.bank.pdf: evaluation/nonlinear.bank
 ## midterm2.test.pdf: evaluation/structure.bank
 ## midterm1.2.test: evaluation/nonlinear.bank
 ## midterm1.2.test.pdf: evaluation/nonlinear.bank
@@ -185,6 +200,9 @@ Sources += copy.tex
 Sources += test.tmp
 Ignore += *.test.tex *.test.pdf
 %.test.tex: %.test test.tmp test.test.fmt newtalk/lect.pl
+	$(PUSH)
+
+%.bank.tex: %.bank test.tmp test.test.fmt newtalk/lect.pl
 	$(PUSH)
 
 Ignore += *.key.*
@@ -217,8 +235,6 @@ makestuff/Makefile:
 -include makestuff/texdeps.mk
 -include makestuff/hotcold.mk
 -include makestuff/wrapR.mk
-
-## -include makestuff/wrapR.mk
 
 -include makestuff/git.mk
 -include makestuff/visual.mk

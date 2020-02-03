@@ -85,6 +85,7 @@ Ignore += *.mc
 
 ## Bank should not be scrambled, make these directly
 
+## bank.fmt is stupid; figure out how to put bank closer to main path
 Sources += bank.fmt
 
 # midterm1.1.smc:
@@ -189,10 +190,10 @@ Sources += copy.tex
 ## Latex outputs
 
 ## midterm1.bank.pdf: evaluation/nonlinear.bank
+## midterm1.2.test.pdf: evaluation/nonlinear.bank evaluation/nonlinear.short
+## midterm1.1.key.pdf: evaluation/linear.bank evaluation/linear.short
+
 ## midterm2.test.pdf: evaluation/structure.bank
-## midterm1.2.test: evaluation/nonlinear.bank
-## midterm1.2.test.pdf: evaluation/nonlinear.bank
-## midterm2.3.key.pdf: evaluation/life_history.bank
 ## midterm2.4.rub.pdf: evaluation/structure.short
 
 Sources += test.tmp

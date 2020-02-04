@@ -214,6 +214,95 @@ Ignore += *.rub.*
 
 ######################################################################
 
+midterm1.4.exam.pdf:
+
+## Final versions
+
+## Cover pages handled differently
+## This is because the final cover needs to know the number of pages
+## so it's part of the main tex document
+## (midterms share midterm.front.tex)
+Sources += $(wildcard *.front.tex)
+Sources += scantron.jpg
+
+## Add cover pages and such
+Ignore += *.exam.tex *.exam.pdf *.front.pdf
+midterm1.%.exam.pdf: midterm.front.pdf midterm1.%.test.pdf
+	$(pdfcat)
+
+midterm2.%.exam.pdf: midterm.front.pdf midterm2.%.test.pdf
+	$(pdfcat)
+
+### we handle testver twice (redundant code)
+### examno.pl does something for the cover page on the final
+### midterms (and final body?) are handled by scramble.pl
+### Better way might be separate .tmp for the tests, just like
+### we have versioned .tmp for the exam
+Sources += final.tmp examno.pl final.cover.tex
+## final.3.final.pdf: final.tmp 
+
+final.%.tmp: final.tmp examno.pl
+	$(PUSHSTAR)
+
+%.final.tex: %.test %.tmp test.test.fmt talk/lect.pl
+	$(PUSH)
+
+######################################################################
+
+pushdir = ../web/evaluations
+
+######################################################################
+
+## Printing
+
+## http://printpal.mcmaster.ca/
+## account # 206000301032330000
+
+## White, orchid, green, salmon 
+## Two-sided, stapled
+
+midterm1.5.exam.pdf:
+## midterm1.3.key.pdf: evaluation/linear.short evaluation/nonlinear.short
+
+midterm1_ship: midterm1.1.exam.pdf midterm1.2.exam.pdf midterm1.3.exam.pdf midterm1.4.exam.pdf midterm1.5.exam.pdf
+	/bin/cp -f $^ ~/Downloads
+
+## Push tests and keys with the same command
+midterm1_post: midterm1.1.test.pdf.pd midterm1.2.test.pdf.pd midterm1.3.test.pdf.pd midterm1.4.test.pdf.pd midterm1.5.test.pdf.pd
+midterm1_post: midterm1.1.key.pdf.pd midterm1.2.key.pdf.pd midterm1.3.key.pdf.pd midterm1.4.key.pdf.pd midterm1.5.key.pdf.pd
+
+midterm1.rub.zip: midterm1.1.rub.pdf midterm1.2.rub.pdf midterm1.3.rub.pdf midterm1.4.rub.pdf midterm1.5.rub.pdf
+	$(ZIP)
+
+midterm2_ship: midterm2.1.exam.pdf midterm2.2.exam.pdf midterm2.3.exam.pdf midterm2.4.exam.pdf midterm2.5.exam.pdf
+	/bin/cp -f $^ ~/Downloads
+
+midterm2_post: midterm2.1.test.pdf.pd midterm2.2.test.pdf.pd midterm2.3.test.pdf.pd midterm2.4.test.pdf.pd midterm2.5.test.pdf.pd
+
+midterm2_keys: midterm2.1.key.pdf.pd midterm2.2.key.pdf.pd midterm2.3.key.pdf.pd midterm2.4.key.pdf.pd midterm2.5.key.pdf.pd
+
+midterm2.rub.zip: midterm2.1.rub.pdf midterm2.2.rub.pdf midterm2.3.rub.pdf midterm2.4.rub.pdf midterm2.5.rub.pdf
+	$(ZIP)
+
+## Search email for Exam Upload Instructions (or notice when email arrives and do something)
+# http://macdrive.mcmaster.ca/u/d/4ce0683ccb1f49cca555/ (2019 deferred)
+# B5%m3dG6
+
+Ignore += $(wildcard Bio_3SS3*.pdf) 
+Ignore += $(wildcard final*final.pdf) 
+final_ship: final.1.final.pdf final.2.final.pdf final.2.final.pdf final.4.final.pdf ;
+final_upload: final_ship Bio_3SS3_C01_V1.pdf Bio_3SS3_C01_V2.pdf Bio_3SS3_C01_V3.pdf Bio_3SS3_C01_V4.pdf
+	/bin/cp Bio_3SS3_C01*.pdf ~/Downloads
+defer: Bio_3SS3_C01_V5.pdf
+	/bin/cp $< ~/Downloads
+
+## Finalizing
+## final.1.final.pdf:
+
+Bio_3SS3_C01_V%.pdf: final.%.final.pdf
+	$(forcelink)
+
+######################################################################
 ### Makestuff
 
 Sources += Makefile

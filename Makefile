@@ -26,6 +26,8 @@ pardirs += evaluation assign ts
 
 hotdirs += $(pardirs)
 
+pull: $(pardirs:%=%.pull)
+
 ######################################################################
 
 # Archive

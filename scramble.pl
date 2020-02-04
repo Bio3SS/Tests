@@ -7,7 +7,7 @@ my $V = substr($vnames, $version-1, 1);
 if ($V==5){
 	$V = "DEFERRED";
 } else {
-	$V = "version $V";
+	$V = "Version $V";
 }
 print "PRE \\renewcommand{\\testver}{$V}\n\n";
 

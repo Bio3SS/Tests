@@ -12,7 +12,7 @@
 
 \pagestyle{myheadings}
 % \newcommand{\myhead}{\small \bf Bio 3SS3\hfill{}\fullver}
-\newcommand{\myhead}{\small \bf Bio 3SS3\hfill{}Version \testver}
+\newcommand{\myhead}{\small \bf Bio 3SS3\hfill{}\testver}
 \newcommand{\myfoot}{\hfill Page \thepage\ \hfill}
 \makeatletter
 \renewcommand{\@oddhead}{\myhead}

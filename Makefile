@@ -60,7 +60,7 @@ Ignore += *.fmt
 ## Short-answer banks
 
 Ignore += midterm1.bank
-midterm1.bank: midterm1.formulas evaluation/linear.bank evaluation/nonlinear.bank
+midterm1.bank: midterm1.formulas evaluation/linear.bank evaluation/nonlinear.bank evaluation/corona.bank
 	$(cat)
 
 Ignore += midterm2.bank
@@ -191,8 +191,8 @@ Sources += copy.tex
 
 ## Latex outputs
 
-## midterm1.bank.pdf: evaluation/nonlinear.bank
-## midterm1.2.test.pdf: evaluation/nonlinear.bank evaluation/nonlinear.short
+## midterm1.bank.test.pdf: evaluation/nonlinear.bank
+## midterm1.1.test.pdf: evaluation/nonlinear.bank evaluation/nonlinear.short
 ## midterm1.1.key.pdf: evaluation/linear.bank evaluation/linear.short
 
 ## midterm2.test.pdf: evaluation/structure.bank

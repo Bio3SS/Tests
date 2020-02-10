@@ -24,36 +24,6 @@ assign/%: ; $(MAKE) assign; $(makethere)
 ##################################################################
 
 
-# Test key
-.PRECIOUS: %.ssv
-
-# midterm1.1.ssv:
-Ignore += *.ssv
-midterm%.ssv: midterm%.mc key.pl
-	$(PUSH)
-
-final.%.ssv: final.%.test key.pl
-	$(PUSH)
-
-# Make a special answer key for scantron processing
-# To allow multiple answers, use KEY in the .bank file
-# Does not work yet for self-scoring
-# midterm1.1.sc.csv:
-Ignore += *.sc.csv
-%.sc.csv: %.ssv scantron.pl
-	$(PUSH)
-
-Ignore += *.scantron.csv
-midterm1.scantron.csv:
-midterm2.scantron.csv:
-final.scantron.csv:
-
-# Combine a bunch of scantron keys into a file for the processors
-final.scantron.csv midterm1.scantron.csv midterm2.scantron.csv: %.scantron.csv: %.1.sc.csv %.2.sc.csv %.3.sc.csv %.4.sc.csv %.5.sc.csv
-	$(cat)
-
-######################################################################
-
 # Make a skeleton to track how questions are scrambled
 # Will be used later for marking
 Ignore += final.skeleton midterm1.skeleton midterm2.skeleton

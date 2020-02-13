@@ -3,6 +3,7 @@
 \usepackage{grffile,xspace,lastpage}
 \usepackage[margin=1.2in]{geometry}
 \usepackage{tikz}
+\usepackage[normalem]{ulem}
 \usetikzlibrary{
 	arrows,decorations.pathmorphing,backgrounds,positioning,fit,calc,scopes
 }

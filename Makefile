@@ -18,7 +18,7 @@ vim_session:
 
 ## Directories
 
-pardirs += evaluation assign ts
+pardirs += evaluation assign ts Life_tables
 
 hotdirs += $(pardirs)
 
@@ -168,16 +168,15 @@ knit = echo 'knitr::knit("$<", "$@")' | R --vanilla
 
 #  midterm1.1.test:
 #  midterm1.bank.test:
-#  midterm1.bank.key.pdf:
+#  midterm2.bank.key.pdf:
 
 ### Separator for MC and SA on the same test
 Sources += end.dmu
 
 Ignore += *.test
-%.test: %.smc end.dmu %.ksa
+midterm2.1.test: 
 	$(cat)
-
-midterm1.1.test: midterm1.1.smc end.dmu midterm1.1.ksa
+%.test: %.smc end.dmu %.ksa
 	$(cat)
 
 ## Instructions added for 1M strictness; I think I like them

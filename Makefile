@@ -18,7 +18,7 @@ vim_session:
 
 ## Directories
 
-pardirs += evaluation assign ts Life_tables
+pardirs += evaluation assign ts Life_tables competition
 
 hotdirs += $(pardirs)
 
@@ -64,7 +64,7 @@ midterm1.bank: midterm1.formulas evaluation/linear.bank evaluation/nonlinear.ban
 	$(cat)
 
 Ignore += midterm2.bank
-midterm2.bank: midterm2.formulas evaluation/linear.bank evaluation/nonlinear.bank evaluation/structure.bank evaluation/life_history.bank evaluation/comp.bank
+midterm2.bank: midterm2.formulas evaluation/linear.bank evaluation/nonlinear.bank evaluation/structure.bank evaluation/life_history.bank evaluation/comp.bank evaluation/corona.bank
 	$(cat)
 
 Ignore += final.bank
@@ -88,6 +88,7 @@ Ignore += *.mc
 ## Bank should not be scrambled, make these directly
 
 ## bank.fmt is stupid; figure out how to put bank closer to main path
+## Don't know what the above means, but it's good for now that EXTRA works in bank.fmt 2020 Mar 08 (Sun)
 Sources += bank.fmt
 
 # midterm1.1.smc:
@@ -102,6 +103,9 @@ midterm1.%.smc: midterm1.mc scramble.pl
 	$(PUSHSTAR)
 midterm2.%.smc: midterm2.mc scramble.pl
 	$(PUSHSTAR)
+
+midterm1.smc midterm2.smc:  %.smc: %.mc
+	$(copy)
 
 final.%.test: final.smc scramble.pl
 	$(PUSHSTAR)
@@ -145,6 +149,9 @@ Ignore += *.vsa
 midterm1.bank.vsa midterm2.bank.vsa: %.vsa: %.sa testselect.pl
 	perl -wf $(filter %.pl, $^) 3 $(filter-out %.pl, $^) > $@
 
+midterm1.vsa midterm2.vsa: %.vsa: %.sa testselect.pl
+	perl -wf $(filter %.pl, $^) 2 $(filter-out %.pl, $^) > $@
+
 midterm1.%.vsa: midterm1.sa testselect.pl
 	$(PUSHSTAR)
 
@@ -174,8 +181,6 @@ knit = echo 'knitr::knit("$<", "$@")' | R --vanilla
 Sources += end.dmu
 
 Ignore += *.test
-midterm2.1.test: 
-	$(cat)
 %.test: %.smc end.dmu %.ksa
 	$(cat)
 

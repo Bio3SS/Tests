@@ -196,7 +196,7 @@ Sources += copy.tex
 ## Latex outputs
 
 ## midterm1.bank.test.pdf: evaluation/nonlinear.bank
-## midterm1.1.test.pdf: evaluation/nonlinear.bank evaluation/nonlinear.short
+## midterm2.1.test.pdf: evaluation/nonlinear.bank evaluation/nonlinear.short
 ## midterm1.2.rub.pdf: evaluation/linear.short
 ## midterm1.3.key.pdf: evaluation/linear.short
 

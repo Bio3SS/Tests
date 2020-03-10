@@ -268,7 +268,6 @@ pushdir = ../web/materials
 ## White, orchid, green, salmon 
 ## Two-sided, stapled
 
-midterm1.5.exam.pdf:
 ## midterm1.3.key.pdf: evaluation/linear.short evaluation/nonlinear.short
 
 midterm1_ship: midterm1.1.exam.pdf midterm1.2.exam.pdf midterm1.3.exam.pdf midterm1.4.exam.pdf midterm1.5.exam.pdf

@@ -4,7 +4,7 @@ my $version = shift(@ARGV);
 srand($version);
 my $vnames = "12345678";
 my $V = substr($vnames, $version-1, 1);
-if ($V==5){
+if ($V==6){
 	$V = "DEFERRED";
 } else {
 	$V = "Version $V";

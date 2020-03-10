@@ -87,8 +87,8 @@ Ignore += *.mc
 
 ## Bank should not be scrambled, make these directly
 
-## bank.fmt is stupid; figure out how to put bank closer to main path
-## Don't know what the above means, but it's good for now that EXTRA works in bank.fmt 2020 Mar 08 (Sun)
+## bank.fmt is stupid; we should be making bank.select.fmt from lect/select.format
+
 Sources += bank.fmt
 
 # midterm1.1.smc:
@@ -174,7 +174,7 @@ knit = echo 'knitr::knit("$<", "$@")' | R --vanilla
 ## Put the test together
 
 #  midterm1.1.test:
-#  midterm1.bank.test:
+#  midterm1.bank.test.pdf:
 #  midterm2.bank.key.pdf:
 
 ### Separator for MC and SA on the same test
@@ -219,7 +219,7 @@ Ignore += *.rub.*
 
 ######################################################################
 
-midterm1.4.exam.pdf:
+midterm2.5.exam.pdf:
 
 ## Final versions
 
@@ -243,6 +243,8 @@ midterm2.%.exam.pdf: midterm.front.pdf midterm2.%.test.pdf
 ### midterms (and final body?) are handled by scramble.pl
 ### Better way might be separate .tmp for the tests, just like
 ### we have versioned .tmp for the exam
+### 5 versions for midterms
+### Specify version 6 to get Deferred for exam
 Sources += final.tmp examno.pl final.cover.tex
 ## final.3.final.pdf: final.tmp 
 

@@ -219,7 +219,8 @@ Ignore += *.rub.*
 
 ######################################################################
 
-midterm2.5.exam.pdf:
+## midterm2.3.exam.pdf:
+## midterm2.3.test.log
 
 ## Final versions
 

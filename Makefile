@@ -26,6 +26,13 @@ pull: $(pardirs:%=%.pull)
 
 ######################################################################
 
+## AVenue 2020 Apr 17 (Fri)
+## How to use the test banks for a REMOTE test
+
+Sources += avenue_template.csv avenue1.csv
+
+######################################################################
+
 # Archive
 
 ## DON'T do this until you update the year in archive.pl

@@ -1,0 +1,538 @@
+
+Q Researchers studying a gypsy moth population make the following estimates: The average reproductive female lays 300 eggs; 60% of these eggs are female; 10% of eggs hatch into larvae; 20% of larvae mature into pupae; 50% of pupae mature into adults; 60% of adults survive to reproduce. What is the correct value of fecundity f for this population?
+
+* 1.08
+
+2.16
+
+1.08 moths/year
+
+2.16 moths/year
+
+There is not enough information to answer this question
+
+----------------------------------------
+
+
+Q A scientist introduces a few thousand unknown bacteria into a large container whose nutrients and conditions may or may not be suitable for growth.  She does not expect density dependence to be a factor over the course of the experiment. She should expect the population to show:
+
+Linear increase
+
+Either linear increase or decrease
+
+Exponential increase
+
+* Either exponential increase or decrease
+
+Linear or exponential increase or decrease
+
+----------------------------------------
+
+
+COMMENT Some bacteria in a flask have run out of food and gone into a slower state.  They are not reproducing, and are dying at a per capita rate of 0.02/day.
+
+Q What is the basic reproductive number \R\ for this population under these conditions?
+
+-0.02/day
+
+-0.02
+
+* 0
+
+0.02
+
+0.02/day
+
+Q If the bacteria start with a density of 1000/ml, what is their density after 50 days?
+
+0
+
+* 368/ml
+
+500/ml
+
+693/ml
+
+----------------------------------------
+
+
+Q In a simple time-delayed population model, where growth rate r(t) is a function of the population density at a previous time N(t-τ), and the maximum growth rate is r_max, we expect large oscillations if:
+
+r_max is large compared to τ
+
+r_max is small compared to τ
+
+1/r_max is large compared to τ
+
+* 1/r_max is small compared to τ
+
+Q Use the delay_scale picture for this question. Using the equation for a time-delayed population above, we made the second picture look exactly like the first, but with a different scale for the population, by \textsl{(hint -- think about units for this question)}:
+
+Doubling K only
+
+Doubling N(0) only
+
+* Doubling K and N(0) only
+
+Doubling K, N(0) and \rmax
+
+Doubling K and N(0) and halving \rmax.
+
+----------------------------------------
+
+
+Q A population persists with population regulation for a long time.  It is unknown whether the population experiences Allee effects.  We would expect that the long-term average value of _________ is _________.
+
+\R; >1
+
+\R_0; >1
+
+* \R; very close to 1
+
+\R_0; very close to 1
+
+----------------------------------------
+
+COMMENT See the vital rates figure
+
+Q The assumptions used to draw the picture above correspond to a basic reproductive number \Ro\ of
+
+0
+
+0.5 \yr
+
+1
+
+1.5/\yr
+
+* 4
+
+
+Q The assumptions used to draw the picture above correspond to an instantaneous growth rate _at carrying capacity_ r(K) of
+
+0
+
+* 0.5 \yr
+
+1
+
+1.5/\yr
+
+4
+
+
+----------------------------------------
+
+
+Q Which of the following is true of the age distribution of a decreasing population with a constant life table?
+
+It matches the \ell_x curve exactly
+
+* It is more top-heavy (more individuals in older age classes) than the \ell_x curve
+
+It is more bottom-heavy (more individuals in younger age classes) than the \ell_x curve
+
+A population can't be decreasing if it has a constant life table
+
+ANS In a decreasing population, \lambda<1. The SAD is proportional to \ell_x \lambda^{-x}, so it increases with x.
+
+----------------------------------------
+
+
+Q An annual plant colonizes a new environment where seed and seedling survival is highly variable from year to year, due to weather conditions.  We would expect the population to evolve to:
+
+* Have a higher fraction of seeds that germinate (start growing) in their second or third year, even at the expense of a lower fraction that germinates overall
+
+Have a higher fraction of seeds that germinate successfully overall, even at the expense of a lower fraction that germinates later than the first year
+
+Produce fewer offspring, with more resources provided to each individual offspring
+
+Produce more offspring, with less resources provided to each individual offspring
+
+ANS In a more variable environment, it is more important that the plants can spread out their risk over time, thus they should allocate resources to delayed germination.
+
+----------------------------------------
+
+
+Q A plant population is observed to be confined to a single valley, possibly due to habitat disturbance, and individuals always experience very similar conditions.  Over a study period, it is observed that the population increases by a factor of 1.5 in good years, and by a factor of 0.6 in bad years.  If good years and bad years each occur about half the time, what is the long term average value of the finite rate of increase \lambda for this population?
+
+0.9
+
+* 0.95
+
+1
+
+1.05
+
+2.1
+
+ANS We calculate the geometric mean of 0.6 and 1.5.  This example illustrates one reason why reducing habitat size may have negative indirect effects on species -- this species would likely have \lambda>1 if it had more places to disperse to.
+
+----------------------------------------
+
+
+Q Cole's paradox asks why some plants are iteroparous (reproduce more than once).  Which of the following points does _not_ help to explain Cole's paradox?
+
+Plants must deal with variation in reproductive success through time
+
+* Plants must deal with variation in reproductive success across space
+
+Plant offspring may be less likely to survive than established plants
+
+Plant populations are regulated
+
+----------------------------------------
+
+
+Q Compared to the geometric mean, the arithmetic mean is much _________ when variation is _________, and more similar when variation is _________.
+
+* higher; high; low
+
+higher; low; high
+
+lower; high; low
+
+lower; low; high
+
+----------------------------------------
+
+
+Q The ``balance argument'' for sexual allocation implies that, if individuals do not interact strongly with their siblings, females should on average:
+
+Produce the same number of male and female offspring
+
+Use the same amount of resources _per offspring_ for male and female offspring
+
+* Use the same _total_ amount of resources for male and female offspring
+
+All of the above
+
+----------------------------------------
+
+
+Q  Which of the following is an advantage of dispersal?
+
+* Averaging across patches within years allows for an arithmetic average, which is always greater than or equal to the geometric average
+
+Increased carrying capacity K
+
+Improved competitive ability
+
+Less likely to encounter unsuitable habitat
+
+Increased inbreeding
+
+----------------------------------------
+
+COMMENT Use this information for the next two questions.  In a population of beetles, all reproduction is sexual, and males and females mix freely.  Females in this population produce many more female than male offspring.
+
+Q What can you say about the relative fitness at birth of females and males in this population?
+
+Females have higher lifetime fitness per individual
+
+* Males have higher lifetime fitness per individual
+
+Both sexes have equal lifetime fitness per individual
+
+There is not enough information to tell
+
+ANS If all reproduction is sexual, the total male fitness is the same as the total female fitness.  If there are fewer males, their average fitness per individual must be higher.
+
+Q The balance argument would predict that in this beetle population:
+
+Females use more total resources producing male offspring than female offspring
+
+Females use more total resources producing female offspring than male offspring
+
+* Females use more resources for each individual male offspring than female offspring
+
+Females use more resources for each individual female offspring than male offspring
+
+----------------------------------------
+
+
+Q Which of the following is a `bet-hedging' adaptation that allows organisms to average over risk within a generation?
+
+Investment in males
+
+* Iteroparity
+
+Long lifespan
+
+Short lifespan
+
+High R
+
+----------------------------------------
+
+
+Q The growth rate of species 1 in the presence of species 2 is given by dN_1/dt} = r(N_1 + α_21 N_2) N_1.  If species 1 is counted in units of indiv_1, species 2 in units of  indiv_2, and time is counted in units of years, α_21:
+
+Has units of 1/year
+
+* Has units of indiv_1/indiv_2
+
+Has units of indiv_2/indiv_1
+
+Has units of indiv_2/year
+
+Has units of indiv_1/year
+
+----------------------------------------
+
+
+Q We expect dominance to occur when
+
+Each species does better in an environment where its own species is at carrying capacity than it does in an environment where the other species is at carrying capacity
+
+Each species does better in an environment where the other species is at carrying capacity than it does in an environment where its own species is at carrying capacity
+
+One species does relatively better in an environment where its own species is at carrying capacity, while the other does relatively better in an environment where the other species is at carrying capacity
+
+* One species does better than the other in an environment where either species is at carrying capacity
+
+----------------------------------------
+
+Q In a certain environment, algal species compete primarily for light in small pools, which may be disturbed.  If the disturbance rate is very low, which species would we expect to dominate?
+
+The species with the highest growth rate at high light (r_max)
+
+The species with the lowest r_max
+
+The species with the highest light level at which it reaches equilibrium
+
+* The species with the lowest light level at which it reaches equilibrium
+
+----------------------------------------
+
+COMMENT See the competition pictures.  The middle trace in the large phase plot shows both species starting at the same density.
+
+Q The big picture shows:
+
+Dominance by species 1
+
+Dominance by species 2
+
+Mutual exclusion
+
+* Coexistence
+
+Q Which of the small time plots matches the _leftmost_ path from the large phase plot above?
+
+Upper left
+
+Upper right
+
+* Lower left
+
+Lower right
+
+Q If E_12 is the population-level competitive effect of species 1 on species 2 (and conversely), what can you say about the values of E in this system?
+
+Both E_12 and E_21 are >1.
+
+* Both E_12 and E_21 are <1.
+
+E_12 but not E_21 is >1.
+
+E_21 but not E_12 is >1.
+
+There is not enough information to choose one of these answers.
+
+Q Species _________ has a larger value of _________, but we can't tell which has a larger value of _________.
+
+1; K; r
+
+2; K; r
+
+1; r; K
+
+* 2; r; K
+
+----------------------------------------
+
+
+Q Spruce trees are not found in Hamilton forests because in this environment, they have:
+
+r = 0
+
+0 < r < 1
+
+\Ro = 0
+
+* 0 < \Ro < 1
+
+
+Q Compared to a realized niche, a fundamental niche is usually _________ but sometimes _________.
+
+* bigger; the same size
+
+the same size or bigger; smaller
+
+smaller; the same size
+
+the same size or smaller; bigger
+
+----------------------------------------
+
+
+Q What sort of behaviour do you expect to see from a simple model of exploiter-resource species interactions with both exploiter and resource-species density-dependence added?
+
+Neutral cycles
+
+A limit cycle
+
+* Damped oscillations
+
+A limit cycle if _exploiter_ density dependence is strong, and damped oscillations otherwise
+
+A limit cycle if _resource_ density dependence is strong, and damped oscillations otherwise
+
+----------------------------------------
+
+
+Q When algae are abundant, the amount of algae that a water flea eats depends mostly on how quickly it can digest and only slightly on how hard it is to find algae. If algae are already abundant in this system, but continue increasing, we expect the _per-capita_ feeding rate to go _________ from the point of view of the fleas, and _________ from the point of view of the algae.
+
+up; up
+
+* up; down
+
+down; up
+
+down; down
+
+----------------------------------------
+
+
+COMMENT A large lake has big fish and small fish at equilibrium under reciprocal control -- ie., the small fish are controlled by predation from large fish, and the large fish are controlled by the food supply of small fish.  Fishing has been prohibited in this lake for many years, but now will be allowed at a relatively low level that is not expected to change the fact that the two kinds of fish are the main factors controlling each others' population growth.  Both big and small fish will be caught and taken.
+
+Q What effect would you expect to see in the {\em short term}?
+
+Populations of both small and large fish increase
+
+Populations of small fish decline, while populations of large fish increase
+
+Populations of large fish decline, while populations of small fish increase
+
+* Populations of both small and large fish decline
+
+Q What effect would you expect to see in the {\em long term}?
+
+Populations of both small and large fish increase
+
+Populations of small fish decline, while populations of large fish increase
+
+* Populations of large fish decline, while populations of small fish increase
+
+Populations of both small and large fish decline
+
+----------------------------------------
+
+
+Q Resource-exploiter systems have an intrinsic tendency to oscillate because each species has a _________ effect on its own growth rate.
+
+direct, positive
+
+indirect, positive
+
+direct, negative
+
+* indirect, negative
+
+----------------------------------------
+
+Q If r_f and r_e represent the instantaneous _per capita_ growth rates of a resource and exploiter species with density N_e and N_f respectively, which of the following is (almost) always true?
+
+r_e increases when N_e increases
+
+r_f increases when N_e increases
+
+* r_e increases when N_f increases
+
+r_f increases when N_f increases
+
+None of the above
+
+----------------------------------------
+
+
+Q Why do we usually add density dependence in the resource species in a model of exploitation, but less often add it for the exploiter species?
+
+Because exploiters are not likely to experience density dependence
+
+* Because explicitly modeling the resource species already provides a form of density dependence for the exploiter
+
+Because density dependence for the resource species is stabilizing, while density dependence for the exploiter species is destabilizing
+
+Because density dependence for the resource species is destabilizing, while density dependence for the exploiter species is stabilizing
+
+----------------------------------------
+
+
+COMMENT See the pplimit figures. 
+
+Q The two figures above were generated with the same parameters, but different _________. They show _________.
+
+interactions; damped oscillations
+
+interactions; neutral oscillations
+
+starting densities; neutral oscillations
+
+interactions; approach to a limit cycle
+
+* starting densities; approach to a limit cycle
+
+----------------------------------------
+
+COMMENT See the steps figures
+
+Q The picture above illustrates the idea that, for a fixed rate of spread, a disease with a faster generation time has:
+
+larger instantaneous rate of growth
+
+smaller instantaneous rate of growth
+
+larger effective reproductive number
+
+* smaller effective reproductive number
+
+----------------------------------------
+
+
+Q Ontario has an influenza epidemic every year. According to simple models, influenza vaccination in Ontario most likely _________ reduce the average number of infectious people and  _________ increase the average number of susceptible people.
+
+does; does
+
+* does; does not
+
+does not; does
+
+does not; does not
+
+----------------------------------------
+
+
+Q Increasing the number of susceptible individuals at the beginning of a disease outbreak is likely to _________ the total number of infected individuals, and _________ the number left susceptible at the end
+
+increase; increase
+
+* increase; decrease
+
+decrease; increase
+
+decrease; decrease
+
+----------------------------------------
+
+Q Adding births and deaths to a simple disease model will make persistent cycles _________ likely, similar to the effect of adding _________.
+
+more; vaccination
+
+* more; loss of immunity
+
+less; vaccination
+
+less; loss of immunity
+
+----------------------------------------

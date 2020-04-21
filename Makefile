@@ -83,11 +83,15 @@ final.bank: final.formulas evaluation/linear.bank evaluation/nonlinear.bank eval
 # MC selection
 # Use lect/select.format
 
-# midterm1.mc:
-
+# final.mc:
 .PRECIOUS: %.mc
 Ignore += *.mc
 %.mc: %.bank null.tmp %.select.fmt newtalk/lect.pl
+	$(PUSH)
+
+Sources += $(wildcard *.wmc)
+## practice.mc.csv: practice.wmc mcave.pl
+%.mc.csv: %.wmc mcave.pl
 	$(PUSH)
 
 # Scramble

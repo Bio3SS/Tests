@@ -91,6 +91,7 @@ Ignore += *.mc
 
 Sources += $(wildcard *.wmc)
 ## practice.mc.csv: practice.wmc mcave.pl
+Ignore += *.mc.csv
 %.mc.csv: %.wmc mcave.pl
 	$(PUSH)
 

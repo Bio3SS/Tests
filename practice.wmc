@@ -66,7 +66,7 @@ r_max is small compared to τ
 
 * 1/r_max is small compared to τ
 
-Q Use the delay_scale picture for this question. Using the equation for a time-delayed population above, we made the second picture look exactly like the first, but with a different scale for the population, by \textsl{(hint -- think about units for this question)}:
+Q See the Delay picture for this question. Using the equation for a time-delayed population above, we made the second picture look exactly like the first, but with a different scale for the population, by \textsl{(hint -- think about units for this question)}:
 
 Doubling K only
 
@@ -93,7 +93,7 @@ Q A population persists with population regulation for a long time.  It is unkno
 
 ----------------------------------------
 
-COMMENT See the vital rates figure
+COMMENT See the Vital Rates figure
 
 Q The assumptions used to draw the picture above correspond to a basic reproductive number \Ro\ of
 
@@ -196,7 +196,6 @@ lower; low; high
 
 ----------------------------------------
 
-
 Q The ``balance argument'' for sexual allocation implies that, if individuals do not interact strongly with their siblings, females should on average:
 
 Produce the same number of male and female offspring
@@ -251,7 +250,7 @@ Females use more resources for each individual female offspring than male offspr
 ----------------------------------------
 
 
-Q Which of the following is a `bet-hedging' adaptation that allows organisms to average over risk within a generation?
+Q Which of the following is a ``bet-hedging'' adaptation that allows organisms to average over risk within a generation?
 
 Investment in males
 
@@ -406,7 +405,7 @@ down; down
 
 COMMENT A large lake has big fish and small fish at equilibrium under reciprocal control -- ie., the small fish are controlled by predation from large fish, and the large fish are controlled by the food supply of small fish.  Fishing has been prohibited in this lake for many years, but now will be allowed at a relatively low level that is not expected to change the fact that the two kinds of fish are the main factors controlling each others' population growth.  Both big and small fish will be caught and taken.
 
-Q What effect would you expect to see in the {\em short term}?
+Q What effect would you expect to see in the \emph{short term}?
 
 Populations of both small and large fish increase
 
@@ -416,7 +415,7 @@ Populations of large fish decline, while populations of small fish increase
 
 * Populations of both small and large fish decline
 
-Q What effect would you expect to see in the {\em long term}?
+Q What effect would you expect to see in the \emph{long term}?
 
 Populations of both small and large fish increase
 
@@ -468,10 +467,9 @@ Because density dependence for the resource species is destabilizing, while dens
 
 ----------------------------------------
 
+COMMENT See the Exploitation figures. 
 
-COMMENT See the pplimit figures. 
-
-Q The two figures above were generated with the same parameters, but different _________. They show _________.
+Q The two figures were generated with the same parameters, but different _________. They show _________.
 
 interactions; damped oscillations
 
@@ -485,7 +483,7 @@ interactions; approach to a limit cycle
 
 ----------------------------------------
 
-COMMENT See the steps figures
+COMMENT See the Spread figures.
 
 Q The picture above illustrates the idea that, for a fixed rate of spread, a disease with a faster generation time has:
 

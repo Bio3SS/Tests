@@ -18,7 +18,7 @@ vim_session:
 
 ## Directories
 
-pardirs += evaluation assign ts Life_tables competition
+pardirs += evaluation assign ts Life_tables competition boxes exploitation
 
 hotdirs += $(pardirs)
 
@@ -89,7 +89,11 @@ Ignore += *.mc
 %.mc: %.bank null.tmp %.select.fmt newtalk/lect.pl
 	$(PUSH)
 
-Sources += $(wildcard *.wmc)
+## final.mc.csv: mcave.pl
+final.wmc: final.mc
+	$(copy)
+
+Sources += $(wildcard *.wmc *.rmc)
 ## practice.mc.csv: practice.wmc mcave.pl
 Ignore += *.mc.csv
 %.mc.csv: %.wmc mcave.pl
@@ -123,6 +127,10 @@ final.%.test: final.smc scramble.pl
 	$(PUSHSTAR)
 
 final.test: final.mc
+	$(copy)
+
+## practice.test.pdf: practice.rsc
+practice.test: practice.rsc
 	$(copy)
 
 ######################################################################

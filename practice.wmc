@@ -223,7 +223,7 @@ Increased inbreeding
 
 ----------------------------------------
 
-COMMENT Use this information for the next two questions.  In a population of beetles, all reproduction is sexual, and males and females mix freely.  Females in this population produce many more female than male offspring.
+COMMENT This information is used in two questions.  In a population of beetles, all reproduction is sexual, and males and females mix freely.  Females in this population produce many more female than male offspring.
 
 Q What can you say about the relative fitness at birth of females and males in this population?
 
@@ -304,7 +304,7 @@ The species with the highest light level at which it reaches equilibrium
 
 ----------------------------------------
 
-COMMENT See the competition pictures.  The middle trace in the large phase plot shows both species starting at the same density.
+COMMENT See the Competition pictures.  The middle trace in the large phase plot shows both species starting at the same density.
 
 Q The big picture shows:
 
@@ -316,7 +316,7 @@ Mutual exclusion
 
 * Coexistence
 
-Q Which of the small time plots matches the _leftmost_ path from the large phase plot above?
+Q Which of the small time plots matches the _leftmost_ path from the large phase plot?
 
 Upper left
 

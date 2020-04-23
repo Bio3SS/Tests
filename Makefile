@@ -89,11 +89,14 @@ Ignore += *.mc
 %.mc: %.bank null.tmp %.select.fmt newtalk/lect.pl
 	$(PUSH)
 
+## Maybe get rid of this file once mcave is happy
+Ignore += final.wmc
 ## final.mc.csv: mcave.pl
 final.wmc: final.mc
 	$(copy)
 
-Sources += $(wildcard *.wmc *.rmc)
+## This was made manually, but that's deprecated now.
+Sources += practice.wmc
 ## practice.mc.csv: practice.wmc mcave.pl
 Ignore += *.mc.csv
 %.mc.csv: %.wmc mcave.pl

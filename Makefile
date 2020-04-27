@@ -89,18 +89,26 @@ Ignore += *.mc
 %.mc: %.bank null.tmp %.select.fmt newtalk/lect.pl
 	$(PUSH)
 
-## Maybe get rid of this file once mcave is happy
-Ignore += final.wmc
+
+######################################################################
+
+## Avenue csv files
+%.mc.csv: %.mc mcave.pl
+	$(PUSH)
+
+## Resource files for Avenue tests
+## final.resource.test: final.mc rt.pl
+## final.resource.test: final.mc rt.pl
+%.resource.test: %.mc rt.pl
+	$(PUSH)
+
+## final.mc.csv: evaluation/linear.bank evaluation/nonlinear.bank evaluation/structure.bank evaluation/life_history.bank evaluation/comp.bank evaluation/pred.bank evaluation/disease.bank
 ## final.mc.csv: mcave.pl
-final.wmc: final.mc
-	$(copy)
 
 ## This was made manually, but that's deprecated now.
 Sources += practice.wmc
 ## practice.mc.csv: practice.wmc mcave.pl
 Ignore += *.mc.csv
-%.mc.csv: %.wmc mcave.pl
-	$(PUSH)
 
 # Scramble
 

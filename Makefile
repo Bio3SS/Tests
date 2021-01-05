@@ -18,7 +18,7 @@ vim_session:
 
 ## Directories
 
-pardirs += evaluation assign ts Life_tables competition boxes exploitation
+## pardirs += evaluation assign ts Life_tables competition boxes exploitation
 
 hotdirs += $(pardirs)
 

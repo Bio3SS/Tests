@@ -18,7 +18,7 @@ vim_session:
 
 ## Directories
 
-## pardirs += evaluation assign ts Life_tables competition boxes exploitation
+pardirs += evaluation assign ts Life_tables competition boxes exploitation
 
 hotdirs += $(pardirs)
 
@@ -89,7 +89,6 @@ Ignore += *.mc
 %.mc: %.bank null.tmp %.select.fmt newtalk/lect.pl
 	$(PUSH)
 
-
 ######################################################################
 
 ## Avenue csv files
@@ -102,8 +101,12 @@ Ignore += *.mc
 %.resource.test: %.mc rt.pl
 	$(PUSH)
 
+## midterm1.mc.csv:  evaluation/linear.bank evaluation/nonlinear.bank
+
 ## final.mc.csv: evaluation/linear.bank evaluation/nonlinear.bank evaluation/structure.bank evaluation/life_history.bank evaluation/comp.bank evaluation/pred.bank evaluation/disease.bank
 ## final.mc.csv: mcave.pl
+
+######################################################################
 
 ## This was made manually, but that's deprecated now.
 Sources += practice.wmc

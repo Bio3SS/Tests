@@ -39,6 +39,7 @@ while (<>){
 	s/\$//g;
 	s/CDOL/\$/g;
 
+## Put WEB after comment in the input file to override the COMMENT
 	if (/^COMMENT/){
 		s/\w*\s*//;
 		$comment = "$_ ";

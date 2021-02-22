@@ -12,7 +12,7 @@ current: target
 # Content
 
 vim_session:
-	bash -cl "vmt content.mk"
+	bash -cl "vmt content.mk evaluation/linear.bank evaluation/nonlinear.bank"
 
 ######################################################################
 
@@ -102,6 +102,8 @@ Ignore += *.mc
 %.resource.test: %.mc rt.pl
 	$(PUSH)
 
+## midterm1.resource.test.pdf: evaluation/linear.bank evaluation/nonlinear.bank
+## midterm1.key.pdf: evaluation/linear.bank evaluation/nonlinear.bank
 ## midterm1.mc.csv:  evaluation/linear.bank evaluation/nonlinear.bank
 
 ## final.mc.csv: evaluation/linear.bank evaluation/nonlinear.bank evaluation/structure.bank evaluation/life_history.bank evaluation/comp.bank evaluation/pred.bank evaluation/disease.bank
@@ -401,7 +403,7 @@ makestuff/Makefile:
 -include makestuff/os.mk
 
 -include makestuff/lect.mk
--include makestuff/texdeps.mk
+-include makestuff/texi.mk
 -include makestuff/hotcold.mk
 -include makestuff/wrapR.mk
 

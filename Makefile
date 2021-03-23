@@ -36,8 +36,8 @@ Sources += avenue_template.csv avenue1.csv
 
 # Archive
 
-## DON'T do this until you update the year in archive.pl
 ## Start the year by tagging last year's questions.
+## DON'T do this until you update the year in archive.pl
 ## DON'T try to make this work with -e (not easy, not important)
 archiveQuestions:
 	perl -pi -f archive.pl evaluation/*.bank evaluation/*.short
@@ -106,6 +106,8 @@ Ignore += *.mc
 ## midterm1.key.pdf: evaluation/linear.bank evaluation/nonlinear.bank
 ## midterm1.mc.csv:  evaluation/linear.bank evaluation/nonlinear.bank
 
+## midterm2.key.pdf: evaluation/linear.bank evaluation/nonlinear.bank evaluation/structure.bank evaluation/life_history.bank evaluation/comp.bank evaluation/corona.bank
+
 ## final.mc.csv: evaluation/linear.bank evaluation/nonlinear.bank evaluation/structure.bank evaluation/life_history.bank evaluation/comp.bank evaluation/pred.bank evaluation/disease.bank
 ## final.mc.csv: mcave.pl
 
@@ -115,6 +117,8 @@ Ignore += *.mc
 Sources += practice.wmc
 ## practice.mc.csv: practice.wmc mcave.pl
 Ignore += *.mc.csv
+
+######################################################################
 
 # Scramble
 

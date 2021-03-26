@@ -92,6 +92,8 @@ Ignore += *.mc
 
 ######################################################################
 
+## mcave.pl does not recognize KEY; be redundant
+
 ## Avenue csv files
 %.mc.csv: %.mc mcave.pl
 	$(PUSH)
@@ -106,6 +108,8 @@ Ignore += *.mc
 ## midterm1.key.pdf: evaluation/linear.bank evaluation/nonlinear.bank
 ## midterm1.mc.csv:  evaluation/linear.bank evaluation/nonlinear.bank
 
+## midterm2.resource.test.pdf: 
+## midterm2.mc.csv:  midterm2.mc
 ## midterm2.key.pdf: evaluation/linear.bank evaluation/nonlinear.bank evaluation/structure.bank evaluation/life_history.bank evaluation/comp.bank evaluation/corona.bank
 
 ## final.mc.csv: evaluation/linear.bank evaluation/nonlinear.bank evaluation/structure.bank evaluation/life_history.bank evaluation/comp.bank evaluation/pred.bank evaluation/disease.bank

@@ -8,5 +8,6 @@ while (<>){
 	print if (s/^HEAD/OUTLINE/);
 	print if (s/^FIGHEAD/HEAD/);
 	print if (/FIG/);
+	print if (/RESOURCE/);
 	print if (/PDF/);
 }

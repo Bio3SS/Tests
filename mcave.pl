@@ -1,3 +1,4 @@
+## Does not recognize KEY; be redundant
 use strict;
 use 5.10.0;
 
@@ -6,6 +7,8 @@ $/ = "";
 my $comment = "";
 my $dq= '"';
 my $qn = 0;
+my $option;
+my $optmax=5;
 while (<>){
 	chomp;
 	my $val=0;
@@ -27,6 +30,7 @@ while (<>){
 	s/\\geq/≥/g;
 	s/\\leq/≤/g;
 	s/\\blank\\*/________/g;
+	s/\.\~/. /g;
 
 	s/\\ / /g;
 
@@ -53,16 +57,18 @@ while (<>){
 	elsif (/^HEAD/){}
 	elsif (/^KEY/){}
 	elsif (/FIG/){}
+	elsif (/RESOURCE/){}
 	elsif (/PDF/){}
 	elsif (/NOCOMMENT/){}
 	elsif (/^ANS/){}
 	elsif (/^Q/){
 		$qn++;
+		$option=0;
 		my $id = sprintf("2020F%2d", $qn);
 		$id =~ s/ /0/g;
 		my $tit = $_;
 		$tit =~ s/[^\w\s]//g;
-		$tit = join("_", (split /\s/, $tit)[3..4]);
+		$tit = join("_", (split /\s/, $tit)[2..3]);
 		s/\w*\s*/$comment/;
 		say "";
 		say "NewQuestion,MC,";
@@ -76,6 +82,8 @@ while (<>){
 		$comment = "";
 	}
 	else{
+		$option ++;
+		die ("Suspicious option $_") if $option > $optmax;
 		say "Option,$val,$dq$_$dq,,";
 	}
 }

@@ -114,6 +114,7 @@ Ignore += *.mc
 
 ## midterm2.test.pdf:
 
+## final.test.pdf:
 ## final.mc.csv: evaluation/linear.bank evaluation/nonlinear.bank evaluation/structure.bank evaluation/life_history.bank evaluation/comp.bank evaluation/pred.bank evaluation/disease.bank
 ## final.mc.csv: mcave.pl
 

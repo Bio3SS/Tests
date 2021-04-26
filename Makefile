@@ -18,8 +18,8 @@ vim_session:
 
 ## Directories
 
-pardirs += evaluation ts
-## pardirs += Life_tables competition boxes exploitation
+pardirs += evaluation boxes ts
+## pardirs += Life_tables competition exploitation
 
 hotdirs += $(pardirs)
 

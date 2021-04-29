@@ -1,6 +1,8 @@
 ## This is Tests, a screens project directory under 3SS
 ## Includes test and marking machinery (because both depend on scramble stuff)
 
+## https://avenue.cllmcmaster.ca/d2l/lms/quizzing/admin/quizzes_manage.d2l?ou=371137
+
 current: target
 -include target.mk
 
@@ -114,6 +116,8 @@ Ignore += *.mc
 
 ## midterm2.test.pdf:
 
+## final.resource.test.pdf:
+## final.key.pdf:
 ## final.test.pdf:
 ## final.mc.csv: evaluation/linear.bank evaluation/nonlinear.bank evaluation/structure.bank evaluation/life_history.bank evaluation/comp.bank evaluation/pred.bank evaluation/disease.bank
 ## final.mc.csv: mcave.pl

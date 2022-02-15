@@ -14,13 +14,13 @@ current: target
 # Content
 
 vim_session:
-	bash -cl "vmt content.mk evaluation/linear.bank evaluation/nonlinear.bank"
+	bash -cl "vmt content.mk evaluation/linear.bank evaluation/nonlinear.bank structure.bank"
 
 ######################################################################
 
 ## Directories
 
-pardirs += evaluation boxes ts
+pardirs += evaluation boxes ts bd_models
 ## pardirs += Life_tables competition exploitation
 
 hotdirs += $(pardirs)
@@ -70,8 +70,10 @@ Ignore += *.fmt
 ## Short-answer banks
 
 Ignore += midterm1.bank
-midterm1.bank: midterm1.formulas evaluation/linear.bank evaluation/nonlinear.bank evaluation/corona.bank
+midterm1.bank: midterm1.formulas evaluation/linear.bank evaluation/nonlinear.bank
 	$(cat)
+
+evaluation/corona.bank:
 
 Ignore += midterm2.bank
 midterm2.bank: midterm2.formulas evaluation/linear.bank evaluation/nonlinear.bank evaluation/structure.bank evaluation/life_history.bank evaluation/comp.bank evaluation/corona.bank

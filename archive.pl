@@ -1,1 +1,1 @@
-s/(FIRST|SECOND|EXAM)\b/${1}20/;
+s/(FIRST|SECOND|EXAM)\b/${1}21/;

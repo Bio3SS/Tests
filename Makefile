@@ -14,13 +14,13 @@ current: target
 # Content
 
 vim_session:
-	bash -cl "vmt content.mk evaluation/linear.bank evaluation/nonlinear.bank"
+	bash -cl "vmt content.mk evaluation/linear.bank evaluation/nonlinear.bank evaluation/structure.bank"
 
 ######################################################################
 
 ## Directories
 
-pardirs += evaluation boxes ts
+pardirs += evaluation boxes ts bd_models
 ## pardirs += Life_tables competition exploitation
 
 hotdirs += $(pardirs)
@@ -67,11 +67,13 @@ Ignore += *.fmt
 
 ######################################################################
 
-## Short-answer banks
+## MC banks
 
 Ignore += midterm1.bank
-midterm1.bank: midterm1.formulas evaluation/linear.bank evaluation/nonlinear.bank evaluation/corona.bank
+midterm1.bank: midterm2.formulas evaluation/linear.bank evaluation/nonlinear.bank evaluation/structure.bank
 	$(cat)
+
+evaluation/corona.bank:
 
 Ignore += midterm2.bank
 midterm2.bank: midterm2.formulas evaluation/linear.bank evaluation/nonlinear.bank evaluation/structure.bank evaluation/life_history.bank evaluation/comp.bank evaluation/corona.bank
@@ -106,6 +108,7 @@ Ignore += *.mc
 %.resource.test: %.mc rt.pl
 	$(PUSH)
 
+## midterm1.1.test.pdf: evaluation/linear.bank evaluation/nonlinear.bank
 ## midterm1.resource.test.pdf: evaluation/linear.bank evaluation/nonlinear.bank
 ## midterm1.key.pdf: evaluation/linear.bank evaluation/nonlinear.bank
 ## midterm1.mc.csv:  evaluation/linear.bank evaluation/nonlinear.bank
@@ -171,10 +174,10 @@ practice.test: practice.rsc
 
 midterm1.sa:
 
-# Make combined SA lists for each test
+# SA banks
 Ignore += *.short.test
 Sources += sahead.short
-midterm1.short.test: sahead.short evaluation/linear.short evaluation/nonlinear.short 
+midterm1.short.test: sahead.short evaluation/linear.short evaluation/nonlinear.short evaluation/structure.short
 	$(cat)
 
 midterm2.short.test: evaluation/linear.short evaluation/nonlinear.short evaluation/structure.short evaluation/life_history.short
@@ -283,8 +286,11 @@ Ignore += *.rub.*
 Sources += $(wildcard *.front.tex)
 Sources += scantron.jpg
 
+## midterm.front.pdf: midterm.front.tex
+
 ## Add cover pages and such
 Ignore += *.exam.tex *.exam.pdf *.front.pdf
+## midterm1.1.exam.pdf: midterm.front.pdf midterm1.1.test.pdf
 midterm1.%.exam.pdf: midterm.front.pdf midterm1.%.test.pdf
 	$(pdfcat)
 
@@ -315,8 +321,8 @@ pushdir = ../web/materials
 
 ## Printing
 
-## http://printpal.mcmaster.ca/
-## account # 206000301032330000
+## https://mps.mcmaster.ca/services/printing-services/
+## account # MAC01 206000301032330000
 
 ## White, orchid, green, salmon 
 ## Two-sided, stapled

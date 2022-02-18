@@ -437,9 +437,9 @@ subTests:
 
 %.pl:
 	$(CP) subTests/$@ .
-	$(RW)
+	$(RW) $@
 
-## This is pretty.
+## This is pretty. (Does it work? 2022 Feb 18 (Fri))
 subTests/%:
 	$(MAKE) subTests
 

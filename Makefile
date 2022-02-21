@@ -251,10 +251,11 @@ Sources += copy.tex
 ## Latex outputs
 
 ## midterm1.bank.test.pdf: evaluation/nonlinear.bank
-## midterm2.1.test.pdf: evaluation/nonlinear.bank evaluation/nonlinear.short
-## midterm1.2.rub.pdf: evaluation/linear.short
+## midterm1.1.test.pdf: evaluation/nonlinear.bank evaluation/nonlinear.short
+## midterm1.1.rub.pdf: evaluation/structure.short
 ## midterm1.3.key.pdf: evaluation/linear.short
 
+## midterm2.1.test.pdf: evaluation/nonlinear.bank evaluation/nonlinear.short
 ## midterm2.test.pdf: evaluation/structure.bank
 ## midterm2.4.rub.pdf: evaluation/structure.short
 
@@ -327,7 +328,7 @@ pushdir = ../web/materials
 ## White, orchid, green, salmon 
 ## Two-sided, stapled
 
-## midterm1.3.key.pdf: evaluation/linear.short evaluation/nonlinear.short
+## midterm1.1.key.pdf: evaluation/linear.short evaluation/nonlinear.short
 
 midterm1_ship: midterm1.1.exam.pdf midterm1.2.exam.pdf midterm1.3.exam.pdf midterm1.4.exam.pdf midterm1.5.exam.pdf
 	/bin/cp -f $^ ~/Downloads
@@ -336,7 +337,8 @@ midterm1_ship: midterm1.1.exam.pdf midterm1.2.exam.pdf midterm1.3.exam.pdf midte
 midterm1_post: midterm1.1.test.pdf.pd midterm1.2.test.pdf.pd midterm1.3.test.pdf.pd midterm1.4.test.pdf.pd midterm1.5.test.pdf.pd
 midterm1_post: midterm1.1.key.pdf.pd midterm1.2.key.pdf.pd midterm1.3.key.pdf.pd midterm1.4.key.pdf.pd midterm1.5.key.pdf.pd
 
-midterm1.rub.zip: midterm1.1.rub.pdf midterm1.2.rub.pdf midterm1.3.rub.pdf midterm1.4.rub.pdf midterm1.5.rub.pdf
+midterm1.rub.zip: midterm1.1.rub.pdf midterm1.2.rub.pdf midterm1.3.rub.pdf
+	## midterm1.4.rub.pdf midterm1.5.rub.pdf
 	$(ZIP)
 
 midterm2_ship: midterm2.1.exam.pdf midterm2.2.exam.pdf midterm2.3.exam.pdf midterm2.4.exam.pdf midterm2.5.exam.pdf

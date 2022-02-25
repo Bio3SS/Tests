@@ -1,5 +1,5 @@
 
 ```{R include = FALSE}
-options(digits=2)
+options(digits=3)
 ```
 

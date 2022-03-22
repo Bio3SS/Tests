@@ -108,3 +108,13 @@ TAmarks.avenue.csv: TAmarks.Rout.csv na_fake.pl
 
 ## Need to unscramble and other nonsense; there is still stuff in content
 
+######################################################################
+
+## This was made manually, but that's deprecated now.
+Sources += practice.wmc
+## practice.mc.csv: practice.wmc mcave.pl
+Ignore += *.mc.csv
+
+## practice.test.pdf: practice.rsc
+practice.test: practice.rsc
+	$(copy)

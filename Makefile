@@ -76,7 +76,7 @@ midterm1.bank: midterm2.formulas evaluation/linear.bank evaluation/nonlinear.ban
 evaluation/corona.bank:
 
 Ignore += midterm2.bank
-midterm2.bank: midterm2.formulas evaluation/linear.bank evaluation/nonlinear.bank evaluation/structure.bank evaluation/life_history.bank evaluation/comp.bank evaluation/corona.bank
+midterm2.bank: midterm2.formulas evaluation/linear.bank evaluation/nonlinear.bank evaluation/structure.bank evaluation/life_history.bank evaluation/comp.bank evaluation/pred.bank
 	$(cat)
 
 Ignore += final.bank
@@ -118,19 +118,13 @@ Ignore += *.mc
 ## midterm2.key.pdf: evaluation/linear.bank evaluation/nonlinear.bank evaluation/structure.bank evaluation/life_history.bank evaluation/comp.bank evaluation/corona.bank
 
 ## midterm2.test.pdf:
+## midterm2.key.pdf:
 
 ## final.resource.test.pdf:
 ## final.key.pdf:
 ## final.test.pdf:
 ## final.mc.csv: evaluation/linear.bank evaluation/nonlinear.bank evaluation/structure.bank evaluation/life_history.bank evaluation/comp.bank evaluation/pred.bank evaluation/disease.bank
 ## final.mc.csv: mcave.pl
-
-######################################################################
-
-## This was made manually, but that's deprecated now.
-Sources += practice.wmc
-## practice.mc.csv: practice.wmc mcave.pl
-Ignore += *.mc.csv
 
 ######################################################################
 
@@ -158,18 +152,25 @@ midterm2.%.smc: midterm2.mc scramble.pl
 midterm1.smc midterm2.smc:  %.smc: %.mc
 	$(copy)
 
+######################################################################
+
+## TEMP?? 2022 no SA on M2
+
+midterm2.%.test: midterm2.smc scramble.pl
+	$(PUSHSTAR)
+
+midterm2.test: midterm2.mc
+	$(copy)
+
+## Generic tests are midterms with MC and SA
+## The final is just MC so has its own rules here
+
 final.%.test: final.smc scramble.pl
 	$(PUSHSTAR)
 
 final.test: final.mc
 	$(copy)
-
-## practice.test.pdf: practice.rsc
-practice.test: practice.rsc
-	$(copy)
-
 ######################################################################
-
 ## Select short answers
 
 midterm1.sa:
@@ -256,7 +257,7 @@ Sources += copy.tex
 ## midterm1.3.key.pdf: evaluation/linear.short
 
 ## midterm2.1.test.pdf: evaluation/nonlinear.bank evaluation/nonlinear.short
-## midterm2.test.pdf: evaluation/structure.bank
+## midterm2.test.pdf: evaluation/linear.bank evaluation/nonlinear.bank evaluation/structure.bank evaluation/life_history.bank evaluation/comp.bank evaluation/pred.bank
 ## midterm2.4.rub.pdf: evaluation/structure.short
 
 Sources += test.tmp
@@ -275,27 +276,27 @@ Ignore += *.rub.*
 
 ######################################################################
 
+Sources += scantron.jpg
+
 ## midterm2.3.exam.pdf:
 ## midterm2.3.test.log
 
-## Final versions
-
-## Cover pages handled differently
+## Printed midterm
+## Cover pages handled differently from final
 ## This is because the final cover needs to know the number of pages
 ## so it's part of the main tex document
-## (midterms share midterm.front.tex)
-Sources += $(wildcard *.front.tex)
-Sources += scantron.jpg
-
-## midterm.front.pdf: midterm.front.tex
+## Would be good to get the version number on front of the midterm!
+## Check which midterm and update numbers and so forth
+Sources += samcmidterm.tex mcmidterm.tex
+## mcmidterm.pdf: mcmidterm.tex
 
 ## Add cover pages and such
 Ignore += *.exam.tex *.exam.pdf *.front.pdf
-## midterm1.1.exam.pdf: midterm.front.pdf midterm1.1.test.pdf
-midterm1.%.exam.pdf: midterm.front.pdf midterm1.%.test.pdf
+## midterm1.1.exam.pdf: samcmidterm.pdf midterm1.1.test.pdf
+midterm1.%.exam.pdf: samcmidterm.pdf midterm1.%.test.pdf
 	$(pdfcat)
 
-midterm2.%.exam.pdf: midterm.front.pdf midterm2.%.test.pdf
+midterm2.%.exam.pdf: mcmidterm.pdf midterm2.%.test.pdf
 	$(pdfcat)
 
 ### we handle testver twice (redundant code)
@@ -343,8 +344,10 @@ midterm1.rub.zip: midterm1.1.rub.pdf midterm1.2.rub.pdf midterm1.3.rub.pdf
 	## midterm1.4.rub.pdf midterm1.5.rub.pdf
 	$(ZIP)
 
-midterm2_ship: midterm2.1.exam.pdf midterm2.2.exam.pdf midterm2.3.exam.pdf midterm2.4.exam.pdf midterm2.5.exam.pdf
+midterm2_ship: midterm2.1.exam.pdf midterm2.2.exam.pdf midterm2.3.exam.pdf
 	/bin/cp -f $^ ~/Downloads
+
+boat: midterm2.4.exam.pdf midterm2.5.exam.pdf
 
 midterm2_post: midterm2.1.test.pdf.pd midterm2.2.test.pdf.pd midterm2.3.test.pdf.pd midterm2.4.test.pdf.pd midterm2.5.test.pdf.pd
 

@@ -256,7 +256,7 @@ Sources += copy.tex
 ## midterm1.1.rub.pdf: evaluation/structure.short
 ## midterm1.3.key.pdf: evaluation/linear.short
 
-## midterm2.1.test.pdf: evaluation/nonlinear.bank evaluation/nonlinear.short
+## midterm2.1.key.pdf: evaluation/nonlinear.bank evaluation/nonlinear.short
 ## midterm2.test.pdf: evaluation/linear.bank evaluation/nonlinear.bank evaluation/structure.bank evaluation/life_history.bank evaluation/comp.bank evaluation/pred.bank
 ## midterm2.4.rub.pdf: evaluation/structure.short
 

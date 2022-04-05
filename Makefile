@@ -256,7 +256,7 @@ Sources += copy.tex
 ## midterm1.1.rub.pdf: evaluation/structure.short
 ## midterm1.3.key.pdf: evaluation/linear.short
 
-## midterm2.1.test.pdf: evaluation/nonlinear.bank evaluation/nonlinear.short
+## midterm2.1.key.pdf: evaluation/nonlinear.bank evaluation/nonlinear.short
 ## midterm2.test.pdf: evaluation/linear.bank evaluation/nonlinear.bank evaluation/structure.bank evaluation/life_history.bank evaluation/comp.bank evaluation/pred.bank
 ## midterm2.4.rub.pdf: evaluation/structure.short
 
@@ -350,8 +350,10 @@ midterm2_ship: midterm2.1.exam.pdf midterm2.2.exam.pdf midterm2.3.exam.pdf
 boat: midterm2.4.exam.pdf midterm2.5.exam.pdf
 
 midterm2_post: midterm2.1.test.pdf.pd midterm2.2.test.pdf.pd midterm2.3.test.pdf.pd midterm2.4.test.pdf.pd midterm2.5.test.pdf.pd
+midterm2_post: midterm2.1.test.pdf.pd midterm2.2.test.pdf.pd midterm2.3.test.pdf.pd
 
 midterm2_keys: midterm2.1.key.pdf.pd midterm2.2.key.pdf.pd midterm2.3.key.pdf.pd midterm2.4.key.pdf.pd midterm2.5.key.pdf.pd
+midterm2_keys: midterm2.1.key.pdf.pd midterm2.2.key.pdf.pd midterm2.3.key.pdf.pd 
 
 midterm2.rub.zip: midterm2.1.rub.pdf midterm2.2.rub.pdf midterm2.3.rub.pdf midterm2.4.rub.pdf midterm2.5.rub.pdf
 	$(ZIP)

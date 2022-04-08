@@ -10,6 +10,7 @@ my @ans;
 while(<>){
 	chomp;
 	last if /ENDMC/;
+	next if /FIG/;
 	s/[\s-]*$//;
 	$count++;
 

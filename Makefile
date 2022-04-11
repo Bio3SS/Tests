@@ -99,7 +99,7 @@ Ignore += *.mc
 ## mcave.pl does not recognize KEY; be redundant
 
 ## Avenue csv files
-Ignore += %.mc.csv
+Ignore += *.mc.csv
 %.mc.csv: %.mc mcave.pl
 	$(PUSH)
 

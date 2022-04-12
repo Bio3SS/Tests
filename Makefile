@@ -376,7 +376,7 @@ Ignore += $(wildcard final*final.pdf)
 final_ship: final.1.final.pdf final.2.final.pdf final.2.final.pdf final.4.final.pdf ;
 final_upload: final_ship Bio_3SS3_C01_V1.pdf Bio_3SS3_C01_V2.pdf Bio_3SS3_C01_V3.pdf Bio_3SS3_C01_V4.pdf
 	/bin/cp Bio_3SS3_C01*.pdf ~/Downloads
-defer: Bio_3SS3_C01_V5.pdf
+defer: Bio_3SS3_C01_V6.pdf
 	/bin/cp $< ~/Downloads
 
 ## Finalizing
@@ -384,6 +384,9 @@ defer: Bio_3SS3_C01_V5.pdf
 
 Bio_3SS3_C01_V%.pdf: final.%.final.pdf
 	$(forcelink)
+
+## final.6.final.pdf:
+## Bio_3SS3_C01_V6.pdf: 
 
 ######################################################################
 

@@ -137,6 +137,11 @@ Ignore += *.mc.csv
 
 Sources += bank.fmt
 
+######################################################################
+
+## Is it scrambling? It looks like midterms are scrambled twice
+## 2022 Apr 11 (Mon) We have debt from covid, I guess?
+
 # midterm1.1.smc:
 
 Sources += $(wildcard *.pl)
@@ -166,12 +171,14 @@ midterm2.test: midterm2.mc
 ## Generic tests are midterms with MC and SA
 ## The final is just MC so has its own rules here
 
-final.%.test: final.smc scramble.pl
+final.%.test: final.mc scramble.pl
 	$(PUSHSTAR)
 
 final.test: final.mc
 	$(copy)
+
 ######################################################################
+
 ## Select short answers
 
 midterm1.sa:
@@ -309,11 +316,12 @@ midterm2.%.exam.pdf: mcmidterm.pdf midterm2.%.test.pdf
 ### Specify version 6 to get Deferred for exam
 Sources += final.tmp examno.pl final.cover.tex
 ## final.3.final.pdf: final.tmp 
+## final.3.test:
 
 final.%.tmp: final.tmp examno.pl
 	$(PUSHSTAR)
 
-%.final.tex: %.test %.tmp test.test.fmt talk/lect.pl
+%.final.tex: %.test %.tmp test.test.fmt newtalk/lect.pl
 	$(PUSH)
 
 ######################################################################
@@ -404,6 +412,7 @@ Ignore += *.sc.csv
 Ignore += *.scantron.csv
 ## midterm1.scantron.csv:
 ## midterm2.scantron.csv:
+## final.1.key.pdf:
 ## final.scantron.csv:
 
 ## How many versions did you print??

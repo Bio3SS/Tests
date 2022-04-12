@@ -321,6 +321,7 @@ Sources += final.tmp examno.pl final.cover.tex
 final.%.tmp: final.tmp examno.pl
 	$(PUSHSTAR)
 
+Ignore += *.final.tex
 %.final.tex: %.test %.tmp test.test.fmt newtalk/lect.pl
 	$(PUSH)
 

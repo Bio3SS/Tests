@@ -316,7 +316,7 @@ midterm2.%.exam.pdf: mcmidterm.pdf midterm2.%.test.pdf
 ### 5 versions for midterms
 ### Specify version 6 to get Deferred for exam
 Sources += final.tmp examno.pl final.cover.tex
-## final.3.final.pdf: final.tmp 
+## final.6.final.pdf: final.tmp 
 ## final.3.test:
 
 final.%.tmp: final.tmp examno.pl
@@ -391,6 +391,8 @@ Bio_3SS3_C01_V%.pdf: final.%.final.pdf
 ## Bio_3SS3_C01_V6.pdf: 
 
 ######################################################################
+
+## After the test, but before the next test, archive the scantron file
 
 # Test key
 .PRECIOUS: %.ssv

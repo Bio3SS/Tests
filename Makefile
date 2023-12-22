@@ -162,6 +162,7 @@ midterm1.smc midterm2.smc:  %.smc: %.mc
 
 ## TEMP?? 2022 no SA on M2
 
+## Redo with scramble intermediaries (see 1M)
 midterm2.%.test: midterm2.smc scramble.pl
 	$(PUSHSTAR)
 

@@ -70,7 +70,7 @@ Ignore += *.fmt
 ## MC banks
 
 Ignore += midterm1.bank
-midterm1.bank: midterm2.formulas evaluation/linear.bank evaluation/nonlinear.bank evaluation/structure.bank
+midterm1.bank: midterm1.formulas evaluation/linear.bank evaluation/nonlinear.bank evaluation/structure.bank
 	$(cat)
 
 evaluation/corona.bank:
@@ -109,6 +109,7 @@ Ignore += *.mc.csv
 %.resource.test: %.mc rt.pl
 	$(PUSH)
 
+## midterm1.test.pdf: evaluation/linear.bank evaluation/nonlinear.bank
 ## midterm1.1.test.pdf: evaluation/linear.bank evaluation/nonlinear.bank
 ## midterm1.resource.test.pdf: evaluation/linear.bank evaluation/nonlinear.bank
 ## midterm1.key.pdf: evaluation/linear.bank evaluation/nonlinear.bank

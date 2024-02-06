@@ -111,6 +111,7 @@ Ignore += *.mc.csv
 
 ## midterm1.test.pdf: evaluation/linear.bank evaluation/nonlinear.bank
 ## midterm1.1.test.pdf: evaluation/linear.bank evaluation/nonlinear.bank
+## midterm1.1.key.pdf: evaluation/linear.bank evaluation/nonlinear.bank
 ## midterm1.resource.test.pdf: evaluation/linear.bank evaluation/nonlinear.bank
 ## midterm1.key.pdf: evaluation/linear.bank evaluation/nonlinear.bank
 ## midterm1.mc.csv:  evaluation/linear.bank evaluation/nonlinear.bank

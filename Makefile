@@ -1,7 +1,10 @@
 ## This is Tests, a screens project directory under 3SS
 ## Includes test and marking machinery (because both depend on scramble stuff)
 
-## https://avenue.cllmcmaster.ca/d2l/lms/quizzing/admin/quizzes_manage.d2l?ou=371137
+## this is some sort of web-quiz-specific link from the pandemic
+## https://avenue.cllmcmaster.ca/d2l/lms/quizzing/admin/quizzes_manage.d2l?ou=595825
+
+## 
 
 current: target
 -include target.mk
@@ -109,11 +112,17 @@ Ignore += *.mc.csv
 %.resource.test: %.mc rt.pl
 	$(PUSH)
 
+check.pdf: midterm1.5.key.pdf
+	$(forcelink)
+
+## Blank version numbers don't work well with changing SA questions
+## midterm1.2.key.tex: evaluation/linear.bank evaluation/nonlinear.bank
+## midterm1.2.key.pdf: evaluation/linear.bank evaluation/nonlinear.bank
+
 ## midterm1.test.pdf: evaluation/linear.bank evaluation/nonlinear.bank
 ## midterm1.1.test.pdf: evaluation/linear.bank evaluation/nonlinear.bank
-## midterm1.1.key.pdf: evaluation/linear.bank evaluation/nonlinear.bank
 ## midterm1.resource.test.pdf: evaluation/linear.bank evaluation/nonlinear.bank
-## midterm1.key.pdf: evaluation/linear.bank evaluation/nonlinear.bank
+## midterm1.1.key.pdf: evaluation/linear.bank evaluation/nonlinear.bank
 ## midterm1.mc.csv:  evaluation/linear.bank evaluation/nonlinear.bank
 
 ## midterm2.resource.test.pdf: 
@@ -303,7 +312,7 @@ Sources += samcmidterm.tex mcmidterm.tex
 
 ## Add cover pages and such
 Ignore += *.exam.tex *.exam.pdf *.front.pdf
-## midterm1.1.exam.pdf: samcmidterm.pdf midterm1.1.test.pdf
+## midterm1.1.exam.pdf: samcmidterm.tex
 midterm1.%.exam.pdf: samcmidterm.pdf midterm1.%.test.pdf
 	$(pdfcat)
 
@@ -340,12 +349,13 @@ pushdir = ../web/materials
 ## account # MAC01 206000301032330000
 
 ## White, orchid, green, salmon 
+## White, pink, green, yellow 
 ## Two-sided, stapled
 
 ## midterm1.1.key.pdf: evaluation/linear.short evaluation/nonlinear.short
 
-midterm1_ship: midterm1.1.exam.pdf midterm1.2.exam.pdf midterm1.3.exam.pdf midterm1.4.exam.pdf midterm1.5.exam.pdf
-	/bin/cp -f $^ ~/Downloads
+midterm1_ship: midterm1.1.exam.pdf.go midterm1.2.exam.pdf.go midterm1.3.exam.pdf.go midterm1.4.exam.pdf.go midterm1.5.exam.pdf.go
+## /bin/cp -f $^ ~/Downloads
 
 ## Push tests and keys with the same command
 midterm1_post: midterm1.1.test.pdf.pd midterm1.2.test.pdf.pd midterm1.3.test.pdf.pd

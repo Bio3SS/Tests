@@ -1,6 +1,9 @@
 ## This is Tests, a screens project directory under 3SS
 ## Includes test and marking machinery (because both depend on scramble stuff)
 
+## https://avenue.cllmcmaster.ca/
+
+## Old course, weird sub-location
 ## https://avenue.cllmcmaster.ca/d2l/lms/quizzing/admin/quizzes_manage.d2l?ou=371137
 
 current: target

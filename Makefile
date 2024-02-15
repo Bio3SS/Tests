@@ -236,12 +236,14 @@ midterm2.%.vsa: midterm2.sa testselect.pl
 
 ## Convert versioned sa to rmd style
 Ignore += *.rsa
+.PRECIOUS: %.rsa
 %.rsa: %.vsa lect/knit.fmt newtalk/lect.pl
 	$(PUSH)
 
 ## and finally knit
-Ignore += *.ksa
 knit = echo 'knitr::knit("$<", "$@")' | R --vanilla
+Ignore += *.ksa
+.PRECIOUS: %.ksa
 %.ksa: %.rsa
 	$(knit)
 

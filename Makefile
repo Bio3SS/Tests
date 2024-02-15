@@ -118,6 +118,7 @@ check.pdf: midterm1.5.key.pdf
 ## Blank version numbers don't work well with changing SA questions
 ## midterm1.2.key.tex: evaluation/linear.bank evaluation/nonlinear.bank
 ## midterm1.2.key.pdf: evaluation/linear.bank evaluation/nonlinear.bank
+## midterm1.2.rub.pdf: evaluation/linear.bank evaluation/nonlinear.bank
 
 ## midterm1.test.pdf: evaluation/linear.bank evaluation/nonlinear.bank
 ## midterm1.1.test.pdf: evaluation/linear.bank evaluation/nonlinear.bank

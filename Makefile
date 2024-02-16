@@ -406,6 +406,7 @@ Bio_3SS3_C01_V%.pdf: final.%.final.pdf
 ######################################################################
 
 ## After the test, but before the next test, archive the scantron file
+## Bleah, just save it on the Dropbox maybe
 
 # Test key
 .PRECIOUS: %.ssv

@@ -118,6 +118,7 @@ check.pdf: midterm1.5.key.pdf
 ## Blank version numbers don't work well with changing SA questions
 ## midterm1.2.key.tex: evaluation/linear.bank evaluation/nonlinear.bank
 ## midterm1.2.key.pdf: evaluation/linear.bank evaluation/nonlinear.bank
+## midterm1.2.rub.pdf: evaluation/linear.bank evaluation/nonlinear.bank
 
 ## midterm1.test.pdf: evaluation/linear.bank evaluation/nonlinear.bank
 ## midterm1.1.test.pdf: evaluation/linear.bank evaluation/nonlinear.bank
@@ -360,10 +361,8 @@ midterm1_ship: midterm1.1.exam.pdf.go midterm1.2.exam.pdf.go midterm1.3.exam.pdf
 ## /bin/cp -f $^ ~/Downloads
 
 ## Push tests and keys with the same command
-midterm1_post: midterm1.1.test.pdf.pd midterm1.2.test.pdf.pd midterm1.3.test.pdf.pd
-## midterm1.4.test.pdf.pd midterm1.5.test.pdf.pd
-midterm1_post: midterm1.1.key.pdf.pd midterm1.2.key.pdf.pd midterm1.3.key.pdf.pd
-## midterm1.4.key.pdf.pd midterm1.5.key.pdf.pd
+midterm1_post: midterm1.1.test.pdf.pd midterm1.2.test.pdf.pd midterm1.3.test.pdf.pd midterm1.4.test.pdf.pd midterm1.5.test.pdf.pd
+midterm1_post: midterm1.1.key.pdf.pd midterm1.2.key.pdf.pd midterm1.3.key.pdf.pd midterm1.4.key.pdf.pd midterm1.5.key.pdf.pd
 
 midterm1.rub.zip: midterm1.1.rub.pdf midterm1.2.rub.pdf midterm1.3.rub.pdf
 	## midterm1.4.rub.pdf midterm1.5.rub.pdf
@@ -407,6 +406,7 @@ Bio_3SS3_C01_V%.pdf: final.%.final.pdf
 ######################################################################
 
 ## After the test, but before the next test, archive the scantron file
+## Bleah, just save it on the Dropbox maybe
 
 # Test key
 .PRECIOUS: %.ssv

@@ -126,6 +126,8 @@ check.pdf: midterm1.5.key.pdf
 ## midterm1.1.key.pdf: evaluation/linear.bank evaluation/nonlinear.bank
 ## midterm1.mc.csv:  evaluation/linear.bank evaluation/nonlinear.bank
 
+## midterm2.1.test.pdf:
+
 ## midterm2.resource.test.pdf: 
 ## midterm2.mc.csv:  midterm2.mc
 ## midterm2.key.pdf: evaluation/linear.bank evaluation/nonlinear.bank evaluation/structure.bank evaluation/life_history.bank evaluation/comp.bank evaluation/corona.bank
@@ -171,15 +173,6 @@ midterm1.smc midterm2.smc:  %.smc: %.mc
 	$(copy)
 
 ######################################################################
-
-## TEMP?? 2022 no SA on M2
-
-## Redo with scramble intermediaries (see 1M)
-midterm2.%.test: midterm2.smc scramble.pl
-	$(PUSHSTAR)
-
-midterm2.test: midterm2.mc
-	$(copy)
 
 ## Generic tests are midterms with MC and SA
 ## The final is just MC so has its own rules here

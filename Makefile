@@ -126,8 +126,6 @@ check.pdf: midterm1.5.key.pdf
 ## midterm1.1.key.pdf: evaluation/linear.bank evaluation/nonlinear.bank
 ## midterm1.mc.csv:  evaluation/linear.bank evaluation/nonlinear.bank
 
-## midterm2.1.test.pdf:
-
 ## midterm2.resource.test.pdf: 
 ## midterm2.mc.csv:  midterm2.mc
 ## midterm2.key.pdf: evaluation/linear.bank evaluation/nonlinear.bank evaluation/structure.bank evaluation/life_history.bank evaluation/comp.bank evaluation/corona.bank
@@ -272,9 +270,12 @@ Sources += copy.tex
 ## midterm1.1.rub.pdf: evaluation/structure.short
 ## midterm1.3.key.pdf: evaluation/linear.short
 
+## midterm2.test.pdf: evaluation/linear.bank evaluation/nonlinear.bank evaluation/structure.bank evaluation/life_history.bank evaluation/comp.bank
+## midterm2.1.test.pdf: evaluation/linear.bank evaluation/nonlinear.bank evaluation/structure.bank evaluation/life_history.bank evaluation/comp.bank
+#### evaluation/pred.bank
+
 ## midterm2.1.key.pdf: evaluation/nonlinear.bank evaluation/nonlinear.short
-## midterm2.test.pdf: evaluation/linear.bank evaluation/nonlinear.bank evaluation/structure.bank evaluation/life_history.bank evaluation/comp.bank evaluation/pred.bank
-## midterm2.4.rub.pdf: evaluation/structure.short
+## midterm2.4.rub.pdf: evaluation/structure.short evaluation/life_history.short
 
 Sources += test.tmp
 Ignore += *.test.tex *.test.pdf

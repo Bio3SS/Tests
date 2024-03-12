@@ -272,6 +272,7 @@ Sources += copy.tex
 
 ## midterm2.test.pdf: evaluation/linear.bank evaluation/nonlinear.bank evaluation/structure.bank evaluation/life_history.bank evaluation/comp.bank
 ## midterm2.1.test.pdf: evaluation/linear.bank evaluation/nonlinear.bank evaluation/structure.bank evaluation/life_history.bank evaluation/comp.bank
+## midterm2.1.key.pdf: evaluation/linear.bank evaluation/nonlinear.bank evaluation/structure.bank evaluation/life_history.bank evaluation/comp.bank
 #### evaluation/pred.bank
 
 ## midterm2.1.key.pdf: evaluation/nonlinear.bank evaluation/nonlinear.short
@@ -313,7 +314,8 @@ Ignore += *.exam.tex *.exam.pdf *.front.pdf
 midterm1.%.exam.pdf: samcmidterm.pdf midterm1.%.test.pdf
 	$(pdfcat)
 
-midterm2.%.exam.pdf: mcmidterm.pdf midterm2.%.test.pdf
+## midterm2.5.exam.pdf: samcmidterm.tex
+midterm2.%.exam.pdf: samcmidterm.pdf midterm2.%.test.pdf
 	$(pdfcat)
 
 ### we handle testver twice (redundant code)
@@ -362,8 +364,7 @@ midterm1.rub.zip: midterm1.1.rub.pdf midterm1.2.rub.pdf midterm1.3.rub.pdf
 	## midterm1.4.rub.pdf midterm1.5.rub.pdf
 	$(ZIP)
 
-midterm2_ship: midterm2.1.exam.pdf midterm2.2.exam.pdf midterm2.3.exam.pdf
-	/bin/cp -f $^ ~/Downloads
+midterm2_splat: midterm2.1.exam.pdf.go midterm2.2.exam.pdf.go midterm2.3.exam.pdf.go midterm2.4.exam.pdf.go midterm2.5.exam.pdf.go
 
 boat: midterm2.4.exam.pdf midterm2.5.exam.pdf
 

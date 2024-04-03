@@ -88,6 +88,17 @@ final.bank: final.formulas evaluation/linear.bank evaluation/nonlinear.bank eval
 
 ######################################################################
 
+## Bad experiments
+
+## pdtab.pdf: evaluation/pdtab.tsv
+pdtab.tex: evaluation/pdtab.tsv
+	Rscript -e 'library(knitr); library(readr); read_tsv("$<") |> kable(format="latex" , col.names = NULL) |> writeLines("$@")'
+
+alert.pdf: evaluation/alert.md
+	$(ltx_r)
+
+######################################################################
+
 # MC selection
 # Use lect/select.format
 
@@ -135,7 +146,7 @@ check.pdf: midterm1.5.key.pdf
 
 ## final.resource.test.pdf:
 ## final.key.pdf:
-## final.test.pdf:
+## final.1.test.pdf:
 ## final.mc.csv: evaluation/linear.bank evaluation/nonlinear.bank evaluation/structure.bank evaluation/life_history.bank evaluation/comp.bank evaluation/pred.bank evaluation/disease.bank
 ## final.mc.csv: mcave.pl
 
@@ -461,26 +472,8 @@ makestuff/Makefile:
 -include makestuff/lect.mk
 -include makestuff/texi.mk
 -include makestuff/hotcold.mk
--include makestuff/wrapR.mk
+-include makestuff/pandoc.mk
 
 -include makestuff/git.mk
 -include makestuff/visual.mk
 -include makestuff/projdir.mk
-
-######################################################################
-
-## Cribbing 
-
-Ignore += subTests
-## subTests.ro:
-subTests:
-	git clone https://github.com/Bio3SS/$@.git
-
-%.pl:
-	$(CP) subTests/$@ .
-	$(RW) $@
-
-## This is pretty. (Does it work? 2022 Feb 18 (Fri))
-subTests/%:
-	$(MAKE) subTests
-

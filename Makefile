@@ -90,10 +90,12 @@ final.bank: final.formulas evaluation/linear.bank evaluation/nonlinear.bank eval
 
 ## Bad experiments
 
+Ignore += pdtab.*
 ## pdtab.pdf: evaluation/pdtab.tsv
 pdtab.tex: evaluation/pdtab.tsv
 	Rscript -e 'library(knitr); library(readr); read_tsv("$<") |> kable(format="latex" , col.names = NULL) |> writeLines("$@")'
 
+Ignore += alert.pdf
 alert.pdf: evaluation/alert.md
 	$(ltx_r)
 

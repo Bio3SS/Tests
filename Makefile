@@ -82,6 +82,7 @@ Ignore += midterm2.bank
 midterm2.bank: midterm2.formulas evaluation/linear.bank evaluation/nonlinear.bank evaluation/structure.bank evaluation/life_history.bank evaluation/comp.bank evaluation/pred.bank
 	$(cat)
 
+Sources += final.md
 Ignore += final.bank
 final.bank: final.formulas evaluation/linear.bank evaluation/nonlinear.bank evaluation/structure.bank evaluation/life_history.bank evaluation/comp.bank evaluation/pred.bank evaluation/disease.bank evaluation/helping.bank
 	$(cat)

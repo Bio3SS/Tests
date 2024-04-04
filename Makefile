@@ -148,6 +148,7 @@ check.pdf: midterm1.5.key.pdf
 ## midterm2.key.pdf:
 
 ## final.resource.test.pdf:
+## final.test.pdf:
 ## final.key.pdf:
 ## final.1.test.pdf:
 ## final.mc.csv: evaluation/linear.bank evaluation/nonlinear.bank evaluation/structure.bank evaluation/life_history.bank evaluation/comp.bank evaluation/pred.bank evaluation/disease.bank

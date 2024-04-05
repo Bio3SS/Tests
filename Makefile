@@ -25,6 +25,7 @@ vim_session:
 
 pardirs += evaluation boxes ts bd_models
 pardirs += Life_tables competition exploitation compensation
+pardirs += sims
 
 hotdirs += $(pardirs)
 
@@ -190,6 +191,7 @@ midterm1.smc midterm2.smc:  %.smc: %.mc
 ## Generic tests are midterms with MC and SA
 ## The final is just MC so has its own rules here
 
+# final.1.final.pdf: evaluation/disease.bank
 final.%.test: final.mc scramble.pl
 	$(PUSHSTAR)
 
@@ -394,7 +396,7 @@ midterm2.rub.zip: midterm2.1.rub.pdf midterm2.2.rub.pdf midterm2.3.rub.pdf midte
 Ignore += $(wildcard Bio_3SS3*.pdf) 
 Ignore += $(wildcard final*final.pdf) 
 final_ship: final.1.final.pdf final.2.final.pdf final.2.final.pdf final.4.final.pdf ;
-final_upload: final_ship Bio_3SS3_C01_V1.pdf Bio_3SS3_C01_V2.pdf Bio_3SS3_C01_V3.pdf Bio_3SS3_C01_V4.pdf
+final_upload: final_ship Bio_3SS3_C01_V1.pdf Bio_3SS3_C01_V2.pdf Bio_3SS3_C01_V3.pdf Bio_3SS3_C01_V4.pdf Bio_3SS3_C01_V5.pdf
 	/bin/cp Bio_3SS3_C01*.pdf ~/Downloads
 defer: Bio_3SS3_C01_V6.pdf
 	/bin/cp $< ~/Downloads
@@ -439,6 +441,7 @@ Ignore += *.sc.csv
 Ignore += *.scantron.csv
 ## midterm1.scantron.csv:
 ## midterm2.scantron.csv:
+## final.test.pdf: evaluation/linear.bank
 ## final.1.key.pdf:
 ## final.scantron.csv:
 

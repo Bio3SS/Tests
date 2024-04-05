@@ -25,6 +25,7 @@ vim_session:
 
 pardirs += evaluation boxes ts bd_models
 pardirs += Life_tables competition exploitation compensation
+pardirs += sims
 
 hotdirs += $(pardirs)
 

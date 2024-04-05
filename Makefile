@@ -423,6 +423,7 @@ Ignore += *.ssv
 midterm%.ssv: midterm%.smc key.pl
 	$(PUSH)
 
+## final.1.ssv
 final.%.ssv: final.%.test key.pl
 	$(PUSH)
 

@@ -441,7 +441,7 @@ Ignore += *.sc.csv
 Ignore += *.scantron.csv
 ## midterm1.scantron.csv:
 ## midterm2.scantron.csv:
-## final.test.pdf: evaluation/linear.bank
+## final.key.pdf: evaluation/linear.bank
 ## final.1.key.pdf:
 ## final.scantron.csv:
 

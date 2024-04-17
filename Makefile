@@ -437,6 +437,7 @@ Ignore += *.sc.csv
 %.sc.csv: %.ssv scantron.pl
 	$(PUSH)
 
+## Put scantron files on macdrive for mps
 ## diff midterm2.scantron.csv ~/Downloads/midterm1.scantron.csv ##
 Ignore += *.scantron.csv
 ## midterm1.scantron.csv:

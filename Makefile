@@ -192,6 +192,7 @@ midterm1.smc midterm2.smc:  %.smc: %.mc
 ## The final is just MC so has its own rules here
 
 # final.1.final.pdf: evaluation/disease.bank
+.PRECIOUS: final.%.test
 final.%.test: final.mc scramble.pl
 	$(PUSHSTAR)
 
@@ -415,18 +416,26 @@ Bio_3SS3_C01_V%.pdf: final.%.final.pdf
 ## After the test, but before the next test, archive the scantron file
 ## Bleah, just save it on the Dropbox maybe
 
-# Test key
-.PRECIOUS: %.ssv
-
 ## We really want to base the key on the human-readable key.tex
 ## For now, just be really carefully about checking
 # midterm2.1.ssv:
 Ignore += *.ssv
+.PRECIOUS: midterm%.ssv
 midterm%.ssv: midterm%.smc key.pl
 	$(PUSH)
 
 ## final.1.ssv
+.PRECIOUS: final.%.ssv
 final.%.ssv: final.%.test key.pl
+	$(PUSH)
+
+######################################################################
+
+## Marking the 2024 Deferred exam by hand
+
+Ignore += *.manual
+## final.6.manual: final.6.ssv manual.pl
+final.%.manual: final.%.ssv manual.pl
 	$(PUSH)
 
 # Make a special answer key for scantron processing

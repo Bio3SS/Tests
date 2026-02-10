@@ -362,17 +362,19 @@ pushdir = ../web/materials
 
 ## Printing
 
-## https://mps.mcmaster.ca/services/printing-services/
+## https://mps.mcmaster.ca/request-a-quote/start-a-print-job/
 ## account # MAC01 206000301032330000
 
+## Two-sided, stapled (unclear what colors now)
 ## White, orchid, green, salmon 
 ## White, pink, green, yellow 
-## Two-sided, stapled
 
 ## midterm1.1.key.pdf: evaluation/linear.short evaluation/nonlinear.short
 
-midterm1_ship: midterm1.1.exam.pdf.go midterm1.2.exam.pdf.go midterm1.3.exam.pdf.go midterm1.4.exam.pdf.go midterm1.5.exam.pdf.go
-## /bin/cp -f $^ ~/Downloads
+midterm1_look: midterm1.1.exam.pdf.go midterm1.2.exam.pdf.go midterm1.3.exam.pdf.go midterm1.4.exam.pdf.go midterm1.5.exam.pdf.go
+
+midterm1_ship: midterm1.1.exam.pdf midterm1.2.exam.pdf midterm1.3.exam.pdf midterm1.4.exam.pdf midterm1.5.exam.pdf
+	/bin/cp -f $^ ~/Downloads
 
 ## Push tests and keys with the same command
 midterm1_post: midterm1.1.test.pdf.pd midterm1.2.test.pdf.pd midterm1.3.test.pdf.pd midterm1.4.test.pdf.pd midterm1.5.test.pdf.pd

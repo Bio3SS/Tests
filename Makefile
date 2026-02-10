@@ -316,7 +316,7 @@ Ignore += *.rub.*
 
 Sources += scantron.jpg
 
-## midterm2.3.exam.pdf:
+## midterm1.5.exam.pdf:
 ## midterm2.3.test.log
 
 ## Printed midterm

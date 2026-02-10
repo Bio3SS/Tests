@@ -137,9 +137,11 @@ check.pdf: midterm1.5.key.pdf
 
 ## midterm1.test.pdf: evaluation/linear.bank evaluation/nonlinear.bank
 ## midterm1.1.test.pdf: evaluation/linear.short evaluation/nonlinear.short
-## midterm1.resource.test.pdf: evaluation/linear.bank evaluation/nonlinear.bank
 ## midterm1.1.key.pdf: evaluation/linear.bank evaluation/nonlinear.bank
 ## midterm1.mc.csv:  evaluation/linear.bank evaluation/nonlinear.bank
+
+## ONLINE exam extra resources
+## midterm1.resource.test.pdf: evaluation/linear.bank evaluation/nonlinear.bank
 
 ## midterm2.resource.test.pdf: 
 ## midterm2.mc.csv:  midterm2.mc

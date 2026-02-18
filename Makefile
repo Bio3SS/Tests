@@ -424,7 +424,7 @@ Bio_3SS3_C01_V%.pdf: final.%.final.pdf
 
 ## We really want to base the key on the human-readable key.tex
 ## For now, just be really carefully about checking
-# midterm2.1.ssv:
+# midterm1.1.ssv: midterm1.1.smc ## (not preserved)
 Ignore += *.ssv
 .PRECIOUS: midterm%.ssv
 midterm%.ssv: midterm%.smc key.pl

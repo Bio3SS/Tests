@@ -213,7 +213,7 @@ Sources += sahead.short
 midterm1.short.test: sahead.short evaluation/linear.short evaluation/nonlinear.short evaluation/structure.short
 	$(cat)
 
-midterm2.short.test: evaluation/linear.short evaluation/nonlinear.short evaluation/structure.short evaluation/life_history.short
+midterm2.short.test: evaluation/linear.short evaluation/nonlinear.short evaluation/structure.short evaluation/life_history.short evaluation/comp.short
 	$(cat)
 
 # Select the short-answer part of a test

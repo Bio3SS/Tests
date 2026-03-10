@@ -77,8 +77,6 @@ Ignore += midterm1.bank
 midterm1.bank: midterm1.formulas evaluation/linear.bank evaluation/nonlinear.bank evaluation/structure.bank
 	$(cat)
 
-evaluation/corona.bank:
-
 Ignore += midterm2.bank
 midterm2.bank: midterm2.formulas evaluation/linear.bank evaluation/nonlinear.bank evaluation/structure.bank evaluation/life_history.bank evaluation/comp.bank evaluation/pred.bank
 	$(cat)
@@ -145,7 +143,7 @@ check.pdf: midterm1.5.key.pdf
 
 ## midterm2.resource.test.pdf: 
 ## midterm2.mc.csv:  midterm2.mc
-## midterm2.key.pdf: evaluation/linear.bank evaluation/nonlinear.bank evaluation/structure.bank evaluation/life_history.bank evaluation/comp.bank evaluation/corona.bank
+## midterm2.key.pdf: evaluation/linear.bank evaluation/nonlinear.bank evaluation/structure.bank evaluation/life_history.bank evaluation/comp.bank
 
 ## midterm2.test.pdf:
 ## midterm2.key.pdf:

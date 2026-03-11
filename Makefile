@@ -371,7 +371,7 @@ pushdir = ../web/materials
 
 ## midterm1.1.key.pdf: evaluation/linear.short evaluation/nonlinear.short
 
-midterm1_look: midterm1.1.exam.pdf.go midterm1.2.exam.pdf.go midterm1.3.exam.pdf.go midterm1.4.exam.pdf.go midterm1.5.exam.pdf.go
+midterm1_splat: midterm1.1.exam.pdf.go midterm1.2.exam.pdf.go midterm1.3.exam.pdf.go midterm1.4.exam.pdf.go midterm1.5.exam.pdf.go
 
 midterm1_ship: midterm1.1.exam.pdf midterm1.2.exam.pdf midterm1.3.exam.pdf midterm1.4.exam.pdf midterm1.5.exam.pdf
 	/bin/cp -f $^ ~/Downloads
@@ -386,13 +386,22 @@ midterm1.rub.zip: midterm1.1.rub.pdf midterm1.2.rub.pdf midterm1.3.rub.pdf midte
 midterm1.rub.all.pdf: midterm1.1.rub.pdf midterm1.2.rub.pdf midterm1.3.rub.pdf midterm1.4.rub.pdf midterm1.5.rub.pdf
 	$(pdfcat)
 
+######################################################################
+
+## Midterm 2 finalizing
+
 midterm2_splat: midterm2.1.exam.pdf.go midterm2.2.exam.pdf.go midterm2.3.exam.pdf.go midterm2.4.exam.pdf.go midterm2.5.exam.pdf.go
+
+midterm2_ship: midterm2.1.exam.pdf midterm2.2.exam.pdf midterm2.3.exam.pdf midterm2.4.exam.pdf midterm2.5.exam.pdf
+	/bin/cp -f $^ ~/Downloads
 
 midterm2_post: midterm2.1.test.pdf.pd midterm2.2.test.pdf.pd midterm2.3.test.pdf.pd midterm2.4.test.pdf.pd midterm2.5.test.pdf.pd
 midterm2_post: midterm2.1.key.pdf.pd midterm2.2.key.pdf.pd midterm2.3.key.pdf.pd midterm2.4.key.pdf.pd midterm2.5.key.pdf.pd
 
 midterm2.rub.zip: midterm2.1.rub.pdf midterm2.2.rub.pdf midterm2.3.rub.pdf midterm2.4.rub.pdf midterm2.5.rub.pdf
 	$(ZIP)
+
+######################################################################
 
 ## Search email for Exam Upload Instructions (or notice when email arrives and do something)
 # http://macdrive.mcmaster.ca/u/d/4ce0683ccb1f49cca555/ (2019 deferred)

@@ -295,6 +295,7 @@ Sources += copy.tex
 
 ## midterm2.1.key.pdf: evaluation/nonlinear.bank evaluation/nonlinear.short
 ## midterm2.4.rub.pdf: evaluation/structure.short evaluation/life_history.short
+## midterm2.4.rub.pdf: evaluation/comp.short evaluation/life_history.short
 
 Sources += test.tmp
 Ignore += *.test.tex *.test.pdf

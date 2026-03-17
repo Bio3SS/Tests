@@ -333,7 +333,8 @@ Ignore += *.exam.tex *.exam.pdf *.front.pdf
 midterm1.%.exam.pdf: samcmidterm.pdf midterm1.%.test.pdf
 	$(pdfcat)
 
-## midterm2.5.exam.pdf: samcmidterm.tex
+## Version 7 for special-request test
+## midterm2.7.exam.pdf: samcmidterm.tex
 midterm2.%.exam.pdf: samcmidterm.pdf midterm2.%.test.pdf
 	$(pdfcat)
 

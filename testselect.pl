@@ -3,6 +3,7 @@ use strict;
 my $version = shift(@ARGV);
 
 $version--;
+$version = $version % 5;
 
 my $num = "[\\w\\\\]*[.]?[\\w\\\\]*";
 

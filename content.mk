@@ -53,7 +53,7 @@ midterm1.orders:
 
 midterm2.test.pdf: evaluation/structure.bank
 midterm2.5.test.pdf: evaluation/life_history.bank
-midterm2.3.key.pdf: evaluation/life_history.bank
+midterm1.1.key.pdf: evaluation/life_history.bank
 midterm2.4.rub.pdf: evaluation/structure.short
 
 Sources += test.tmp

@@ -21,6 +21,17 @@ vim_session:
 
 ######################################################################
 
+# Archive
+
+## START the year by tagging last year's questions.
+## DON'T do this until you update the year in archive.pl
+## DON'T try to make this work with -e (not easy, not important)
+archiveQuestions:
+	perl -pi -f archive.pl evaluation/*.bank evaluation/*.short
+
+######################################################################
+
+
 ## Directories
 
 pardirs += evaluation boxes ts bd_models
@@ -37,16 +48,6 @@ pull: $(pardirs:%=%.pull)
 ## How to use the test banks for a REMOTE test
 
 Sources += avenue_template.csv avenue1.csv
-
-######################################################################
-
-# Archive
-
-## Start the year by tagging last year's questions.
-## DON'T do this until you update the year in archive.pl
-## DON'T try to make this work with -e (not easy, not important)
-archiveQuestions:
-	perl -pi -f archive.pl evaluation/*.bank evaluation/*.short
 
 ######################################################################
 

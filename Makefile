@@ -151,7 +151,7 @@ check.pdf: midterm1.5.key.pdf
 
 ## final.resource.test.pdf:
 ## final.test.pdf:
-## final.key.pdf:
+## final.key.pdf: evaluation/disease.bank evaluation/pred.bank
 ## final.1.test.pdf:
 ## final.mc.csv: evaluation/linear.bank evaluation/nonlinear.bank evaluation/structure.bank evaluation/life_history.bank evaluation/comp.bank evaluation/pred.bank evaluation/disease.bank
 ## final.mc.csv: mcave.pl
@@ -466,7 +466,6 @@ Ignore += *.sc.csv
 Ignore += *.scantron.csv
 ## midterm1.scantron.csv:
 ## midterm2.scantron.csv:
-## final.key.pdf: evaluation/linear.bank
 ## final.1.key.pdf:
 ## final.scantron.csv:
 

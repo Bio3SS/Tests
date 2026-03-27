@@ -150,9 +150,13 @@ check.pdf: midterm1.5.key.pdf
 ## midterm2.key.pdf:
 
 ## final.resource.test.pdf:
-## final.test.pdf:
+## final.test.pdf: evaluation/disease.bank evaluation/pred.bank
+## final.test.pdf: evaluation/comp.bank evaluation/structure.bank
 ## final.key.pdf: evaluation/disease.bank evaluation/pred.bank
+
 ## final.1.test.pdf:
+
+## This is to make Avenue finals during Covid!
 ## final.mc.csv: evaluation/linear.bank evaluation/nonlinear.bank evaluation/structure.bank evaluation/life_history.bank evaluation/comp.bank evaluation/pred.bank evaluation/disease.bank
 ## final.mc.csv: mcave.pl
 

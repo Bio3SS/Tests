@@ -482,11 +482,10 @@ final.scantron.csv: %.scantron.csv: %.1.sc.csv %.2.sc.csv %.3.sc.csv %.4.sc.csv 
 	$(cat)
 
 ## Advanced marking
+Ignore += *.allkeys.csv
 ## midterm2.allkeys.csv: 
 midterm1.allkeys.csv midterm2.allkeys.csv final.allkeys.csv: %.allkeys.csv: %.1.sc.csv %.2.sc.csv %.3.sc.csv %.4.sc.csv %.5.sc.csv %.6.sc.csv %.7.sc.csv %.8.sc.csv
 	$(cat)
-
-
 
 ######################################################################
 

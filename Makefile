@@ -149,14 +149,20 @@ check.pdf: midterm1.5.key.pdf
 ## midterm2.test.pdf:
 ## midterm2.key.pdf:
 
-## final.resource.test.pdf:
-## final.test.pdf: evaluation/disease.bank evaluation/pred.bank
+
 ## final.test.pdf: evaluation/comp.bank evaluation/structure.bank
+## final.key.pdf: evaluation/comp.bank evaluation/structure.bank
+
+## final.test.pdf: evaluation/disease.bank evaluation/pred.bank
 ## final.key.pdf: evaluation/disease.bank evaluation/pred.bank
 
 ## final.1.test.pdf:
 
-## This is to make Avenue finals during Covid!
+
+######################################################################
+
+## Make Avenue finals during Covid!
+## final.resource.test.pdf:
 ## final.mc.csv: evaluation/linear.bank evaluation/nonlinear.bank evaluation/structure.bank evaluation/life_history.bank evaluation/comp.bank evaluation/pred.bank evaluation/disease.bank
 ## final.mc.csv: mcave.pl
 
@@ -499,15 +505,18 @@ tube.png:
 ### Makestuff
 
 Sources += Makefile
-
-Sources += content.mk
-
 Ignore += makestuff
 msrepo = https://github.com/dushoff
-Makefile: makestuff/Makefile
-makestuff/Makefile:
-	git clone $(msrepo)/makestuff
-	ls $@
+
+Makefile: makestuff/00.stamp
+makestuff/%.stamp: | makestuff
+	- $(RM) makestuff/*.stamp
+	cd makestuff && $(MAKE) pull
+	touch $@
+makestuff:
+	git clone --depth 1 $(msrepo)/makestuff
+
+Sources += content.mk
 
 -include makestuff/os.mk
 

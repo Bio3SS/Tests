@@ -416,10 +416,6 @@ midterm2.rub.zip: midterm2.1.rub.pdf midterm2.2.rub.pdf midterm2.3.rub.pdf midte
 
 ######################################################################
 
-## Search email for Exam Upload Instructions (or notice when email arrives and do something)
-# http://macdrive.mcmaster.ca/u/d/4ce0683ccb1f49cca555/ (2019 deferred)
-# B5%m3dG6
-
 Ignore += $(wildcard Bio_3SS3*.pdf) 
 Ignore += $(wildcard final*final.pdf) 
 final_ship: final.1.final.pdf final.2.final.pdf final.2.final.pdf final.4.final.pdf ;

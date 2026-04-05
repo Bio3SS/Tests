@@ -17,7 +17,7 @@ current: target
 # Content
 
 vim_session:
-	bash -cl "vmt content.mk evaluation/linear.bank evaluation/nonlinear.bank evaluation/structure.bank"
+	bash -ic "vmt content.mk evaluation/linear.bank evaluation/nonlinear.bank evaluation/structure.bank"
 
 ######################################################################
 

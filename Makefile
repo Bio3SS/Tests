@@ -357,7 +357,7 @@ midterm2.%.exam.pdf: samcmidterm.pdf midterm2.%.test.pdf
 ### 5 versions for midterms
 ### Specify version 6 to get Deferred for exam
 Sources += final.tmp examno.pl final.cover.tex
-## final.6.final.pdf: final.tmp 
+## final.1.final.pdf: final.tmp 
 ## final.3.test:
 
 final.%.tmp: final.tmp examno.pl
@@ -415,10 +415,6 @@ midterm2.rub.zip: midterm2.1.rub.pdf midterm2.2.rub.pdf midterm2.3.rub.pdf midte
 	$(ZIP)
 
 ######################################################################
-
-## Search email for Exam Upload Instructions (or notice when email arrives and do something)
-# http://macdrive.mcmaster.ca/u/d/4ce0683ccb1f49cca555/ (2019 deferred)
-# B5%m3dG6
 
 Ignore += $(wildcard Bio_3SS3*.pdf) 
 Ignore += $(wildcard final*final.pdf) 

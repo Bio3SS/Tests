@@ -17,7 +17,7 @@ current: target
 # Content
 
 vim_session:
-	bash -cl "vmt content.mk evaluation/linear.bank evaluation/nonlinear.bank evaluation/structure.bank"
+	bash -ic "vmt content.mk evaluation/linear.bank evaluation/nonlinear.bank evaluation/structure.bank"
 
 ######################################################################
 
@@ -149,14 +149,20 @@ check.pdf: midterm1.5.key.pdf
 ## midterm2.test.pdf:
 ## midterm2.key.pdf:
 
-## final.resource.test.pdf:
-## final.test.pdf: evaluation/disease.bank evaluation/pred.bank
+
 ## final.test.pdf: evaluation/comp.bank evaluation/structure.bank
+## final.key.pdf: evaluation/comp.bank evaluation/structure.bank
+
+## final.test.pdf: evaluation/disease.bank evaluation/pred.bank
 ## final.key.pdf: evaluation/disease.bank evaluation/pred.bank
 
 ## final.1.test.pdf:
 
-## This is to make Avenue finals during Covid!
+
+######################################################################
+
+## Make Avenue finals during Covid!
+## final.resource.test.pdf:
 ## final.mc.csv: evaluation/linear.bank evaluation/nonlinear.bank evaluation/structure.bank evaluation/life_history.bank evaluation/comp.bank evaluation/pred.bank evaluation/disease.bank
 ## final.mc.csv: mcave.pl
 
@@ -352,6 +358,7 @@ midterm2.%.exam.pdf: samcmidterm.pdf midterm2.%.test.pdf
 ### Specify version 6 to get Deferred for exam
 Sources += final.tmp examno.pl final.cover.tex
 ## final.4.final.pdf: final.tmp 
+## final.1.final.pdf: final.tmp 
 ## final.3.test:
 
 final.%.tmp: final.tmp examno.pl
@@ -409,10 +416,6 @@ midterm2.rub.zip: midterm2.1.rub.pdf midterm2.2.rub.pdf midterm2.3.rub.pdf midte
 	$(ZIP)
 
 ######################################################################
-
-## Search email for Exam Upload Instructions (or notice when email arrives and do something)
-# http://macdrive.mcmaster.ca/u/d/4ce0683ccb1f49cca555/ (2019 deferred)
-# B5%m3dG6
 
 Ignore += $(wildcard Bio_3SS3*.pdf) 
 Ignore += $(wildcard final*final.pdf) 
@@ -499,15 +502,18 @@ tube.png:
 ### Makestuff
 
 Sources += Makefile
-
-Sources += content.mk
-
 Ignore += makestuff
 msrepo = https://github.com/dushoff
-Makefile: makestuff/Makefile
-makestuff/Makefile:
-	git clone $(msrepo)/makestuff
-	ls $@
+
+Makefile: makestuff/00.stamp
+makestuff/%.stamp: | makestuff
+	- $(RM) makestuff/*.stamp
+	cd makestuff && $(MAKE) pull
+	touch $@
+makestuff:
+	git clone --depth 1 $(msrepo)/makestuff
+
+Sources += content.mk
 
 -include makestuff/os.mk
 

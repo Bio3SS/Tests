@@ -476,6 +476,14 @@ Ignore += *.scantron.csv
 ## final.1.key.pdf:
 ## final.scantron.csv:
 
+shared = macdrive_root:3SS_MPS
+shared.ls:
+	rclone ls $(shared)
+
+## final.scantron.csv.shared:
+%.shared: %
+	rclone copy -u $< $(shared)/
+
 ## How many versions did you print??
 # Combine a bunch of scantron keys into a file for the processors
 midterm1.scantron.csv midterm2.scantron.csv: %.scantron.csv: %.1.sc.csv %.2.sc.csv %.3.sc.csv %.4.sc.csv %.5.sc.csv

@@ -356,8 +356,9 @@ midterm2.%.exam.pdf: samcmidterm.pdf midterm2.%.test.pdf
 ### we have versioned .tmp for the exam
 ### 5 versions for midterms
 ### Specify version 6 to get Deferred for exam
+### make "defer" below for "ship" version
 Sources += final.tmp examno.pl final.cover.tex
-## final.4.final.pdf: final.tmp 
+## final.6.final.pdf: final.tmp 
 ## final.1.final.pdf: final.tmp 
 ## final.3.test:
 
